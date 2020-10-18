@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="18" viewBox="0 0 20 18">
+  <defs>
+    <pattern id="commentId" width="1" height="1" viewBox="-0.525 -0.929 22.065 19.859">
+      <image preserveAspectRatio="xMidYMid slice" width="20.571" height="18" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAADe0lEQVRYhcWYZ2gUQRTHf3eWKDFqjBVUbLFhQ5GIYrD7QRE7KkFQCKigEhUrIgQ7BBRi/2DFjt2oYIsFFbGgomIhiCWWxILBaNQoo29lfOxt7pLc3R+O23kzu/PbnTcz740vKyuLUqgy0AvoDLQEGgL1gBqAD/gEvAVeAo+BW8A54EuoXVUMsf0oIAXoA1QL8d5C4AKwC9gOFAdzkz/Ih08HXgN7gSGlgDOqCgwEtgB5wEKgUlkB+wG5wCoZwkAqlnb35GeG9odH+3ggHXgHjPAC8BriNcCUAHX5wH7gCvAAeCY+98tqUwdoDLQCksQ9Gqjn1JDn7AHGuHXkNkligDNAD5f2l4DlwEngp8fLBZLx3TnAAJd686LJMvz/pIfY+MRVF7gcmbU9geOlhDM6K37YRVzBVhvgOlDLC/AA0EnZ1gHNgOxSQrnpJtAeWKbqmgBHAwHOBQarG2Z5+GF5aD4wUdm6AxkasKnMKlvpdsMwajMwVT1+BtDVBpyt1iQzCRZFAM5RJrBN2WY7gAnAOFWZFkE4R7Nki3Q0Emjtl4WyulVhJsXDKACaRXu1sg03gN2U8WAEobSOqHKSAWxrGQqAG9Hj+9N3jlVONICNLMMT4H0UwGzZ7pXglyjDUWFU0f7qm3Ud45eN31HdKEHZireuC/wyrI6ay6IdLZnVpKPVd64BvKtg3KKYSMn0XdPq675fIgxb46MImKLK2X7Z1u5Yxv4lRblhUrLa0d4Au529eJPqc6NExJFSBenTlsldvjiAmRIsOjJB44kIAu6T1MCRyW8Wo+LBaeqmLi7+GQ4dA4ap56bJrvYfoAn1J6iGvcM4aRKBp8AgZV8qSRQaEPnUecp2uZzB4sTfHkkqYWsDsMA2aMBUoLZVPixv6WgosFP+Y0OA8kkov1b2+lSXNiZbnKSNdl4cJymhrUzrOkNCcaOxwFfgtBWBmLz4s+TGsTLRTBLUQdLMhADw34HRwCG3ShtwBVDfKm8VAPO11rucLFSRJEsnWqFot3y1T4HucQBNeD1Z1RUJYN8yALipSMCWiB96ygC2E7/ScvMTZFHPl5dqESTUKzkmOSWnWwXBvk1FOQor8ZRJoh4DfV7K8+RcMEnOYOJl2H1yDvhRtqvbZtMPFsgNsKQt7SKwUhZUrRfyC5sM4Exgh8ymD/LW5lT0mqyLz8MJ4CngN9iErz96i+zFAAAAAElFTkSuQmCC"/>
+    </pattern>
+  </defs>
+  <rect id="Chat_Icon" data-name="Chat Icon" width="20" height="18" fill="url(#commentId)"/>
+</svg>

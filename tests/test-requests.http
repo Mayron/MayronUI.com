@@ -1,0 +1,19 @@
+@url = http://localhost:5000
+
+@projectId = 1
+
+#### Get Project By Id
+
+#### Get All Projects
+GET {{url}}/api/projects/{{projectId}}
+
+#### Create new Project
+POST {{url}}/api/projects
+Content-Type: application/json
+
+{
+  "title": "MayronUI"
+}
+
+#### Update Project
+POST {{url}}

@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "prettier", "@typescript-eslint", "emotion"],
+  "rules": {
+    "no-debugger": "warn",
+    "linebreak-style": "off",
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "react/prop-types": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/interface-name-prefix": 0,
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error"
+  },
+  "root": true
+}
