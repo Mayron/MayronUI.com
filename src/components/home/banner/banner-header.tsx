@@ -30,6 +30,7 @@ const BannerHeader: React.FC = () => {
             width: 540px;
             border-top: 1px solid ${colors.white};
             padding: 10px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
           `}
         >
           A minimalistic, Graphical, World of Warcraft UI Replacement Package

@@ -173,7 +173,7 @@ const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) 
           padding-bottom: 40px;
         `}
       >
-        <Fade>
+        <Fade triggerOnce>
           <h3
             css={css`
               color: ${colors.white};
@@ -186,7 +186,7 @@ const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) 
           </h3>
         </Fade>
 
-        <Fade direction="left">
+        <Fade direction="left" triggerOnce>
           <p
             css={css`
               border-left: 4px solid ${colors.blue.faint};
@@ -282,6 +282,7 @@ class Carousel extends React.Component<{}, ICarouselState> {
           }}
         >
           <Fade
+            triggerOnce
             css={css`
               height: 124.16px;
             `}

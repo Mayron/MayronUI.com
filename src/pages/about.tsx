@@ -11,7 +11,7 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
       <Section width="text">
         <Panel header="What is MayronUI?">
           <p>
-            MayronUI (commonly referred to as MUI) is a graphical user interface
+            MayronUI (commonly abbreviated to MUI) is a graphical user interface
             alternative for Blizzard Entertainment’s popular World of Warcraft (WoW)
             MMORPG. More specifically, it is an addOn pack consisting of three core
             MUI-specific addOns (
@@ -74,8 +74,8 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
             while LibMayronDB provides the embedded database and a concept called “update
             functions” to provide a streamlined approach for automatically updating the UI
             when the state of the database changes. There are many other libraries that
-            have not had the same refactoring treatment but are still incredibly useful,
-            such as LibMayronGUI and LibMayronEvents.
+            have not had the same refactoring treatment that are vital to the performance
+            and design of the engine, such as LibMayronGUI and LibMayronEvents.
           </p>
         </Panel>
         <Panel header="Who is Mayron?">
@@ -106,17 +106,17 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
         </Panel>
         <Panel header="The person behind the Mayron avatar">
           <p>
-            Hello, and thank you for reading up to this point! My real name is Michael
-            Richards but my friends call me Mike. Mayron is my main character’s name in
-            WoW. I am a software developer/engineer living in the UK with a fulltime job
-            in the industry while also working on several side projects in my spare time.
-            I graduated from the University of Essex in 2016 with a first-class BSc in
-            Computer Science and again in 2020 from the University of Manchester with a
-            first-class MSc in Advanced Computer Science. I also studied an interactive
-            media course before going to university, which allowed me to develop and
-            express my artistic and graphic design skills. I would accept small internship
-            positions to build websites for small businesses and later used these skills
-            to build this website and, of course, MUI.
+            Hello, and thank you for reading up to this point! My real name is Mike
+            Richards and Mayron is my main character’s name in WoW. I am a software
+            developer/engineer living in the UK with a fulltime job in the industry whilst
+            also finding the time to work on several personal side projects. I graduated
+            from the University of Essex in 2016 with a first-class BSc in Computer
+            Science and again in 2020 from the University of Manchester with a first-class
+            MSc in Advanced Computer Science. I also studied an interactive media course
+            before going to university, which allowed me to develop and express my
+            artistic and graphic design skills. I would accept small internship positions
+            to build websites for small businesses and later used these skills to build
+            this website and, of course, MUI.
           </p>
           <p>
             I have been playing the game since the release of The Burning Crusade

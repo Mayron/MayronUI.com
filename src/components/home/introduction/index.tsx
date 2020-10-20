@@ -15,7 +15,7 @@ const Introduction: React.FC = () => {
         padding-bottom: 0;
       `}
     >
-      <Fade>
+      <Fade triggerOnce>
         <header
           css={css`
             h2 {

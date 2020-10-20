@@ -79,6 +79,10 @@ export const overlayCss = css`
 export const BlueContainer = styled.div`
   background-color: ${colors.blue.dark};
   color: ${colors.white};
+
+  h2 {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
 `;
 
 export default Section;
