@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
 import BannerHeader from "./banner-header";
-import { IImageSharpProps } from "../../../custom";
 
 const Banner: React.FC = () => {
   const data: IImageSharpProps = useStaticQuery(graphql`
