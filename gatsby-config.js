@@ -102,10 +102,6 @@ var plugins = [
   },
 ];
 
-if (process.env.NODE_ENV === "production") {
-  plugins.push(`gatsby-plugin-preact`);
-}
-
 module.exports = {
   siteMetadata: {
     title: `MayronUI`,
