@@ -61,7 +61,7 @@ const BlogMetaData: React.FC<IBlogMetaDataProps> = ({
             padding-bottom: 2px;
           `}
         >
-          Mike Richards
+          Mayron
         </p>
         <div
           css={css`

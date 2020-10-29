@@ -1,4 +1,3 @@
-import _ from "lodash";
 import numeral from "numeral";
 import slugify from "slugify";
 

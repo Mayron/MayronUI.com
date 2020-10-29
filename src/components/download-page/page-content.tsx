@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
 import styled from "@emotion/styled";
-import React from "react";
 import { container } from "../../styles/css/containers";
 import vars from "../../styles/variables";
 
