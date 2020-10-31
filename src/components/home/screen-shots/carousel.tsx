@@ -10,6 +10,7 @@ import { Fade } from "react-awesome-reveal";
 import { breakpoints } from "../../../styles/media";
 import { ICarouselImagesNode } from ".";
 import { evenSpacing } from "../../../styles/css/alignment";
+import buttons from "../../../styles/css/buttons";
 
 const arrowCss = css`
   outline: none;
@@ -138,9 +139,8 @@ const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
         css={css`
           flex: 2;
           position: relative;
-          z-index: 10;
           padding: 10px;
-          border: 2px solid ${colors.white};
+          border: 3px solid ${colors.white};
           border-radius: 20px;
 
           img {
@@ -170,36 +170,36 @@ const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
         css={css`
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           padding-top: 40px;
           padding-bottom: 40px;
+
+          p {
+            border-left: 3px solid ${colors.blue.faint};
+            margin-left: -22px;
+            padding-left: 15px;
+          }
+
+          a {
+            ${buttons["text"]};
+          }
         `}
       >
-        <Fade triggerOnce>
-          <h3
-            css={css`
+        <Fade
+          triggerOnce
+          css={css`
+            height: 180px;
+
+            h3 {
               color: ${colors.white};
               margin-right: 40px;
-              margin-bottom: 60px;
-              height: 88px;
               text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            `}
-          >
-            {header}
-          </h3>
+            }
+          `}
+        >
+          <h3>{header}</h3>
         </Fade>
 
-        <Fade direction="left" triggerOnce>
-          <p
-            css={css`
-              border-left: 4px solid ${colors.blue.faint};
-              margin-left: -20px;
-              padding-left: 15px;
-            `}
-          >
-            {children}
-          </p>
-        </Fade>
+        <Fade triggerOnce>{children}</Fade>
       </div>
     </div>
   );

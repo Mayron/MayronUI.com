@@ -13,9 +13,10 @@ type SlideNode = {
 };
 const SlideData = new Map<string, SlideNode>();
 
-SlideData.set("double-bars", {
-  title: "Bottom Left chat and expandable action bars",
-  summary: "Something here...",
+SlideData.set("bottom-left-chat", {
+  title: "Chat Frame and Action Bars",
+  summary:
+    "Enable different chat frames for each corner of the screen and easily toggle a between one or two rows of action bars.",
 });
 
 SlideData.set("installer", {
@@ -30,25 +31,28 @@ SlideData.set("config-menu", {
     "Customise your UI however you like and save those changes to different profiles to be used across all your characters. Use custom layouts to switch multiple profiles at once for each of your installed addons (not just MayronUI).",
 });
 
-SlideData.set("ideal-solo", {
-  title: "Solo?",
-  summary: "TODO",
+SlideData.set("classic", {
+  title: "Supports WoW Classic",
+  summary:
+    "MayronUI supports both retail and classic editions of World of Warcraft. Both can be updated from curseforge using an addon updater program such as the <a target='_blank' href='https://www.twitch.tv/downloads'>Twitch app</a>.",
 });
 
 SlideData.set("combat-solo", {
-  title: "Visually clean",
+  title: "Minimalistic and Graphical Design",
   summary:
     "While going on solo adventures, your UI should not be a distraction; MayronUI has been designed with minimalism in mind to keep you focused on the world around you while still offering a graphically aesthetic look and feel.",
 });
 
-SlideData.set("timerbars", {
-  title: "Timerbars",
-  summary: "TODO",
+SlideData.set("afk", {
+  title: "Interactive AFK Screen",
+  summary:
+    "This specially customised AFK screen shows an animated model of your character, which can be picked up and thrown around on the screen! It also tracks your missed whispers and guild chat messages.",
 });
 
 SlideData.set("raid", {
-  title: "Maximize Your Raiding Experience",
-  summary: "TODO",
+  title: "Healing Layout",
+  summary:
+    "By default, the UI is preconfigured to include a DPS and a Healing layout. The Healing layout uses larger raid frames positioned near your target with a larger power bar. You can add as many layouts as you like and choose which addons should switch to which profiles when a given layout is activated.",
 });
 
 export interface ICarouselImagesNode {
@@ -103,7 +107,7 @@ const ScreenShots: React.FC = () => {
           position: absolute;
           display: block;
           width: 3000px;
-          height: 355px;
+          height: 325px;
           background-color: ${colors.blue.dark};
           transform: rotate(-5deg);
           left: -100px;
@@ -128,7 +132,7 @@ const ScreenShots: React.FC = () => {
                 node={node}
                 imageSrc={`images/carousel/${node.name}.jpg`}
               >
-                {slideData.summary}
+                <p dangerouslySetInnerHTML={{ __html: slideData.summary }}></p>
               </Carousel.Slide>
             );
           })}
