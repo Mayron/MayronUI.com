@@ -47,8 +47,8 @@ const SEO: React.FC<ISEOProps> = ({
       htmlAttributes={{
         lang,
       }}
-      title={title ? `${title} | ` : ""}
-      titleTemplate={`%s${site.siteMetadata.title}`}
+      title={title ? `${title} | ` : site.siteMetadata.title}
+      titleTemplate={title && `%s${site.siteMetadata.title}`}
       defer={false}
       meta={[
         {

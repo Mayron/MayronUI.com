@@ -112,6 +112,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
               margin-bottom: 10px;
               margin-right: 30px;
               width: 340px;
+              min-width: 340px;
             `}
           >
             {header}

@@ -4,11 +4,14 @@ import { jsx, css } from "@emotion/core";
 import React, { useContext } from "react";
 import colors from "../../../styles/colors";
 import alignment from "../../../styles/css/alignment";
-import { breakpoints } from "../../../styles/media";
+import Img, { FixedObject } from "gatsby-image";
 import LazyImage from "../../common/lazy-image";
 import { ReactComponent as ArrowButton } from "../../../images/carousel-arrow.svg";
 import vars from "../../../styles/variables";
 import { Fade } from "react-awesome-reveal";
+import { FluidObject } from "gatsby-image";
+import { breakpoints } from "../../../styles/media";
+import { ICarouselImagesNode } from ".";
 
 const arrowCss = css`
   outline: none;
@@ -25,12 +28,12 @@ const arrowCss = css`
 `;
 
 interface IOptionProps {
-  imageSrc: string;
+  fixedImage: FixedObject;
   imageAlt: string;
 }
 
-const Option: React.FC<IOptionProps> = ({ imageSrc, imageAlt }) => {
-  return <LazyImage src={imageSrc} alt={imageAlt} />;
+const Option: React.FC<IOptionProps> = ({ fixedImage, imageAlt }) => {
+  return <Img fixed={fixedImage} alt={imageAlt} />;
 };
 
 interface ICarouselContext {
@@ -77,23 +80,29 @@ const SliderNavBar: React.FC = ({ children }) => {
               margin: 0 5px;
               user-select: none;
               flex: 1;
+              max-height: 82px;
 
               img {
                 width: 100%;
+                height: 100%;
+                object-fit: contain;
                 border-radius: ${vars.borderRadius};
               }
 
               &.active {
+                filter: drop-shadow(0 2px 4px ${colors.black});
+
                 img {
                   border: 2px solid ${colors.white};
-                  filter: drop-shadow(0 4px 6px #212121) brightness(1.8);
+                  filter: brightness(1.5);
                 }
               }
 
               &:hover {
                 cursor: pointer;
+                filter: drop-shadow(0 2px 4px ${colors.black});
                 img {
-                  filter: drop-shadow(0 2px 4px ${colors.black}) brightness(2);
+                  filter: brightness(1.8);
                 }
               }
             `}
@@ -120,11 +129,11 @@ const SliderNavBar: React.FC = ({ children }) => {
 
 interface ISlideProps {
   header: string;
+  node: ICarouselImagesNode;
   imageSrc: string;
-  imageAlt: string;
 }
 
-const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) => {
+const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
   return (
     <div css={alignment.horizontal.even}>
       <div
@@ -132,9 +141,12 @@ const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) 
           flex: 2;
           position: relative;
           z-index: 10;
+          padding: 10px;
+          border: 2px solid ${colors.white};
+          border-radius: 20px;
 
           img {
-            width: 100%;
+            border-radius: 20px;
           }
 
           &::before {
@@ -153,15 +165,7 @@ const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) 
         `}
       >
         <a href={imageSrc} rel="noreferrer" target="_blank">
-          <LazyImage
-            src={imageSrc}
-            alt={imageAlt}
-            styles={css`
-              padding: 10px;
-              border: 2px solid ${colors.white};
-              border-radius: 20px;
-            `}
-          />
+          <Img fluid={node.preview.fluid} alt={node.name} />
         </a>
       </div>
       <div
@@ -180,6 +184,7 @@ const Slide: React.FC<ISlideProps> = ({ header, imageSrc, imageAlt, children }) 
               margin-right: 40px;
               margin-bottom: 60px;
               height: 88px;
+              text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             `}
           >
             {header}
@@ -293,7 +298,11 @@ class Carousel extends React.Component<{}, ICarouselState> {
                 const props = slide.props as ISlideProps & { children?: React.ReactNode };
 
                 return (
-                  <Option key={key} imageAlt={props.imageAlt} imageSrc={props.imageSrc} />
+                  <Option
+                    key={key}
+                    imageAlt={props.node.name}
+                    fixedImage={props.node.thumbnail.fixed}
+                  />
                 );
               })}
             </Carousel.NavBar>

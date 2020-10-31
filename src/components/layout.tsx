@@ -36,7 +36,7 @@ const scroller = () => {
 
 interface ILayoutProps {
   gaCategory: string;
-  title: string;
+  title?: string;
   collapsed?: boolean;
   description?: string;
   backgroundColor?: string;

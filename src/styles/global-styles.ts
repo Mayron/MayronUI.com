@@ -43,13 +43,18 @@ const globalStyles = css`
 
   h1,
   h2 {
-    font-family: ${vars.nunitoFontFamily};
-    font-weight: ${vars.nunitoFontWeightExtraBold};
-    text-transform: uppercase;
     text-align: center;
   }
 
-  h3,
+  h1,
+  h2,
+  h3 {
+    font-family: ${vars.nunitoFontFamily};
+    font-weight: ${vars.nunitoFontWeightExtraBold};
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
   h4,
   h5 {
     font-family: ${vars.robotoFontFamily};
