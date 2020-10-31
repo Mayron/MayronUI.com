@@ -76,14 +76,14 @@ const PanelHeader = styled.header`
 
   h2 {
     text-align: left;
-    font-size: ${vars.statementLargeFontSize};
+    font-size: ${vars.largeFontSize};
     margin-bottom: 20px;
     color: ${colors.blue.dark};
   }
 `;
 
 const StepNumber = styled.span`
-  font-size: ${vars.statementLargeFontSize};
+  font-size: ${vars.largeFontSize};
   font-family: ${vars.nunitoFontFamily};
   font-weight: ${vars.nunitoFontWeightExtraBold};
   margin-right: 15px;

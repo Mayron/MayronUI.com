@@ -4,7 +4,7 @@ import { faPatreon } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import colors from "../../../styles/colors";
-import alignment from "../../../styles/css/alignment";
+import { evenSpacing } from "../../../styles/css/alignment";
 import { container } from "../../../styles/css/containers";
 import Button from "../../widgets/button";
 import SocialMediaIcons from "./social-media-icons";
@@ -46,7 +46,7 @@ const BannerHeader: React.FC = () => {
           `,
         ]}
       >
-        <div css={alignment.horizontal.even}>
+        <div css={evenSpacing}>
           <Button type="primary" size="lg" href="/p/mayronui">
             Go to Download Page
           </Button>

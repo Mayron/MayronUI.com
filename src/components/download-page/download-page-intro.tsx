@@ -11,8 +11,8 @@ interface IDownloadPageIntroProps {
 }
 
 const Description = styled.p`
-  font-size: ${vars.statementSmallFontSize};
-  font-weight: ${vars.statementRegularAndLargeFontWeight};
+  font-size: ${vars.smallFontSize};
+  font-weight: ${vars.robotoFontWeightMedium};
 `;
 
 const Header = styled.header`

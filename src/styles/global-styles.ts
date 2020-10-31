@@ -3,8 +3,11 @@ import colors from "./colors";
 import { css } from "@emotion/core";
 import media from "./media";
 import { customScrollBar } from "./css/misc";
+import fonts from "./fonts";
 
 const globalStyles = css`
+  ${fonts};
+
   * {
     margin: 0;
     padding: 0;
@@ -64,18 +67,6 @@ const globalStyles = css`
 
   h1 {
     font-size: ${vars.h1FontSize};
-
-    &.sm {
-      font-size: ${vars.h1SmallerFontSize};
-    }
-
-    &.jumbo {
-      font-size: ${vars.jumbotronFontSize};
-
-      ${media.down("sm")`
-        font-size: ${vars.jumbotronMobileFontSize};
-      `};
-    }
   }
 
   h2 {

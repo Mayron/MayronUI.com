@@ -16,7 +16,7 @@ const ReadyToGetStarted: React.FC = () => {
       <h3>Ready to get started?</h3>
       <p
         css={css`
-          font-size: ${vars.statementLargeFontSize};
+          font-size: ${vars.largeFontSize};
           padding-top: 10px;
           padding-bottom: 40px;
         `}

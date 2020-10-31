@@ -3,7 +3,7 @@ import { jsx, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
-import alignment from "../../../styles/css/alignment";
+import { evenSpacing } from "../../../styles/css/alignment";
 import Section, { BlueContainer } from "../../../styles/css/containers";
 import vars from "../../../styles/variables";
 import LazyImage from "../../common/lazy-image";
@@ -36,7 +36,7 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
           <header>
             <h2>{header}</h2>
           </header>
-          <div css={alignment.horizontal.even}>
+          <div css={evenSpacing}>
             <BulletList>{children}</BulletList>
             <LazyImage
               src="/images/config.gif"

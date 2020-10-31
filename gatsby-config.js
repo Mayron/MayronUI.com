@@ -82,14 +82,6 @@ var plugins = [
   },
   // `gatsby-plugin-webpack-bundle-analyzer`,
   `gatsby-plugin-remove-trailing-slashes`,
-  {
-    resolve: "gatsby-plugin-web-font-loader",
-    options: {
-      google: {
-        families: ["Nunito Sans:600;700;800", "Roboto:400;500;700"],
-      },
-    },
-  },
   `gatsby-transformer-remark`,
   {
     resolve: `gatsby-source-contentful`,

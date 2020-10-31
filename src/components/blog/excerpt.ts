@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import vars from "../../styles/variables";
 
 const Excerpt = styled.p`
-  font-size: ${vars.statementSmallFontSize};
-  font-weight: ${vars.statementRegularAndLargeFontWeight};
+  font-size: ${vars.smallFontSize};
+  font-weight: ${vars.robotoFontWeightMedium};
   margin-bottom: 20px;
 `;
 

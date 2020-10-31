@@ -93,16 +93,10 @@ const SEO: React.FC<ISEOProps> = ({
         },
       ].concat(meta)}
     >
-      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com/" />
+      <link rel="dns-prefetch" href="//mayronui.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com/" />
+      <link rel="preconnect" href="//fonts.gstatic.com/" />
       <link rel="shortcut icon" href="/favicon32.png" type="image/png" />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap;"
-      />
 
       <script
         type="application/ld+json"

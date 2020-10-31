@@ -3,15 +3,13 @@
 import { jsx, css } from "@emotion/core";
 import React, { useContext } from "react";
 import colors from "../../../styles/colors";
-import alignment from "../../../styles/css/alignment";
 import Img, { FixedObject } from "gatsby-image";
-import LazyImage from "../../common/lazy-image";
 import { ReactComponent as ArrowButton } from "../../../images/carousel-arrow.svg";
 import vars from "../../../styles/variables";
 import { Fade } from "react-awesome-reveal";
-import { FluidObject } from "gatsby-image";
 import { breakpoints } from "../../../styles/media";
 import { ICarouselImagesNode } from ".";
+import { evenSpacing } from "../../../styles/css/alignment";
 
 const arrowCss = css`
   outline: none;
@@ -135,7 +133,7 @@ interface ISlideProps {
 
 const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
   return (
-    <div css={alignment.horizontal.even}>
+    <div css={evenSpacing}>
       <div
         css={css`
           flex: 2;

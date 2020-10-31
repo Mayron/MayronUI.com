@@ -19,7 +19,7 @@ const primary = css`
   ${baseButtonStyle};
   background-color: ${colors.link.default};
   color: ${colors.white};
-  font-weight: ${vars.nunitoFontWeightBold};
+  font-weight: ${vars.robotoFontWeightBold};
   height: 34px;
   line-height: 34px;
   border: none;
