@@ -5,6 +5,7 @@ import { FixedObject, FluidObject } from "gatsby-image";
 import React from "react";
 import colors from "../../../styles/colors";
 import { Section } from "../../../styles/css/containers";
+import media from "../../../styles/media";
 import Carousel from "./carousel";
 
 type SlideNode = {
@@ -101,6 +102,10 @@ const ScreenShots: React.FC = () => {
       css={css`
         position: relative;
         overflow: hidden;
+
+        ${media.down("sm")`
+          display: none;
+        `};
 
         &::before {
           content: " ";

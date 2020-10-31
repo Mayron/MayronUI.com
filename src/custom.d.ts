@@ -25,15 +25,6 @@ declare interface IChildImageSharp {
   };
 }
 
-declare interface IImageSharpProps {
-  file: {
-    childImageSharp: {
-      fixed: FixedObject;
-      fluid: FluidObject;
-    };
-  };
-}
-
 declare interface IBlogPost {
   html?: string;
   timeToRead: number;

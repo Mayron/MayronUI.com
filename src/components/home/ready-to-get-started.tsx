@@ -2,6 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import React from "react";
 import Section from "../../styles/css/containers";
+import media from "../../styles/media";
 import vars from "../../styles/variables";
 import Button from "../widgets/button";
 
@@ -10,7 +11,11 @@ const ReadyToGetStarted: React.FC = () => {
     <Section
       css={css`
         text-align: center;
-        padding-top: 60px;
+        padding-top: 60px !important;
+
+        ${media.down("xs")`
+          padding-bottom: 60px;
+        `};
       `}
     >
       <h3>Ready to get started?</h3>

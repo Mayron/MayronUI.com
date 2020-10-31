@@ -10,6 +10,7 @@ import {
   faTwitch,
   faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
+import media from "../../../styles/media";
 
 interface ISocialMediaIconsProps {
   includePatreon?: boolean;
@@ -21,6 +22,14 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
       css={css`
         display: flex;
         margin-top: 30px;
+
+        ${media.down("xs")`
+          justify-content: space-evenly;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 10px;
+          border-radius: 4px;
+          margin-top: 20px;
+        `};
 
         li {
           padding: 0 10px;
@@ -44,7 +53,7 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
         <FontAwesomeIcon title="YouTube" size="2x" color="#fe0000" icon={faYoutube} />
       </li>
       <li>
-        <FontAwesomeIcon title="Twitch" size="2x" color="#6441a4" icon={faTwitch} />
+        <FontAwesomeIcon title="Twitch" size="2x" color="#864dee" icon={faTwitch} />
       </li>
       <li>
         <FontAwesomeIcon

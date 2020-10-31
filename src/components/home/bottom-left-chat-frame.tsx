@@ -8,6 +8,7 @@ import Img from "gatsby-image";
 import colors from "../../styles/colors";
 import vars from "../../styles/variables";
 import { ReactComponent as Lines } from "../../images/lines.svg";
+import media from "../../styles/media";
 
 interface IListItemProps {
   label: string;
@@ -52,7 +53,7 @@ interface IBottomLeftChatFrameProps {
 }
 
 const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) => {
-  const data: IImageSharpProps = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "bottom-left-chat.jpg" }) {
         childImageSharp {
@@ -81,6 +82,27 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
           transform: rotate(6deg);
           left: -100px;
           top: -130px;
+
+          ${media.down("xs")`
+            height: 500px;
+          `};
+        }
+
+        h2 {
+          color: ${colors.white};
+          text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          text-align: right;
+          margin-bottom: 10px;
+          margin-right: 30px;
+          width: 340px;
+          min-width: 340px;
+
+          ${media.down("xs")`
+            text-align: center;
+            margin-top: 30px;
+            margin-right: 0;
+            width: 100%;
+          `};
         }
 
         img {
@@ -102,21 +124,13 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             display: flex;
             justify-content: flex-end;
             margin-left: auto;
+
+            ${media.down("xs")`
+              padding-left: 0;
+            `};
           `}
         >
-          <h2
-            css={css`
-              color: ${colors.white};
-              text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-              text-align: right;
-              margin-bottom: 10px;
-              margin-right: 30px;
-              width: 340px;
-              min-width: 340px;
-            `}
-          >
-            {header}
-          </h2>
+          <h2>{header}</h2>
 
           <div
             css={css`
@@ -131,6 +145,13 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
                 justify-content: flex-end;
                 margin-right: 57px;
                 top: 5px;
+
+                ${media.down("xs")`
+                  margin-right: 0;
+                  margin-bottom: 30px;
+                  width: 355px !important;
+                  height: 260px  !important;
+                `};
               `}
             />
             <Lines
@@ -139,6 +160,10 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
                 position: absolute;
                 top: 107px;
                 right: -70px;
+
+                ${media.down("xs")`
+                  display: none;
+                `};
               `}
             />
           </div>
@@ -146,10 +171,26 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
           <ul
             css={css`
               list-style-type: disc;
-              margin-bottom: 80px;
-              li {
-                position: absolute;
-              }
+
+              ${media.up("sm")`
+                margin-bottom: 80px;
+
+                li {
+                  position: absolute;
+                }
+              `};
+
+              ${media.down("xs")`
+                padding-inline-start: 30px;
+
+                li {
+                  padding-bottom: 15px;
+
+                  &:last-of-type {
+                    padding-bottom: 0;
+                  }
+                }
+              `};
             `}
           >
             <ListItem top={-220} left={0} label="Switch between multiple UI layouts">

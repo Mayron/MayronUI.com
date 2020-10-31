@@ -5,6 +5,7 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { evenSpacing } from "../../../styles/css/alignment";
 import Section, { BlueContainer } from "../../../styles/css/containers";
+import media from "../../../styles/media";
 import vars from "../../../styles/variables";
 import LazyImage from "../../common/lazy-image";
 
@@ -29,6 +30,12 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
       css={css`
         position: relative;
         z-index: 10;
+
+        ${media.down("xs")`
+          h2 {
+            margin: 30px 0;
+          }
+        `};
       `}
     >
       <Section width="slim" verticalSpacing="large">
@@ -36,7 +43,25 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
           <header>
             <h2>{header}</h2>
           </header>
-          <div css={evenSpacing}>
+          <div
+            css={css`
+              display: flex;
+
+              ${media.down("xs")`
+                flex-direction: column;    
+
+                ul { 
+                  padding-inline-start: 30px;
+                  padding-bottom: 30px;
+                }
+
+                img {
+                  margin: 10px;
+                  width: calc(100% - 20px);
+                }
+              `};
+            `}
+          >
             <BulletList>{children}</BulletList>
             <LazyImage
               src="/images/config.gif"
@@ -44,6 +69,7 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
               styles={css`
                 border-radius: ${vars.borderRadius};
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                width: 100%;
               `}
             />
           </div>

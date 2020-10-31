@@ -6,13 +6,14 @@ import { Fade } from "react-awesome-reveal";
 import Section, { BlueContainer } from "../../styles/css/containers";
 import Img from "gatsby-image";
 import vars from "../../styles/variables";
+import media from "../../styles/media";
 
 interface ITimerBarsProps {
   header: string;
 }
 
 const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
-  const data: IImageSharpProps = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "timerbars.jpg" }) {
         childImageSharp {
@@ -44,9 +45,15 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
               flex: 1;
             }
 
+            h2 {
+              margin-bottom: 30px;
+            }
+
             ul {
               list-style-type: disc;
+              padding-inline-start: 50px;
             }
+
             li {
               margin-bottom: 15px;
 
@@ -54,21 +61,21 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
                 margin-bottom: none;
               }
             }
+
+            ${media.down("xs")`
+              flex-direction: column;
+              padding-top: 40px;
+
+              ul {
+                padding-inline-start: 30px;
+                padding-bottom: 20px;
+              }
+            `};
           `}
         >
           <header>
-            <h2
-              css={css`
-                margin-bottom: 30px;
-              `}
-            >
-              {header}
-            </h2>
-            <ul
-              css={css`
-                padding-inline-start: 50px;
-              `}
-            >
+            <h2>{header}</h2>
+            <ul>
               <li>
                 Fully customisable combat timer bars track your buffs and debuffs applied
                 to you or any unit of your choosing.

@@ -5,6 +5,7 @@ import BulletPoints from "../../common/bullet-points";
 import LazyImage from "../../common/lazy-image";
 import { Fade } from "react-awesome-reveal";
 import Section from "../../../styles/css/containers";
+import media from "../../../styles/media";
 
 const Introduction: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Introduction: React.FC = () => {
       verticalSpacing="large"
       width="slim"
       css={css`
-        padding-bottom: 0;
+        padding-bottom: 0 !important;
       `}
     >
       <Fade triggerOnce>
@@ -27,6 +28,12 @@ const Introduction: React.FC = () => {
               margin-bottom: 15px;
               padding: 0 100px;
             }
+
+            ${media.down("xs")`
+              h2, p {
+                padding: 0;
+              }
+            `};
           `}
         >
           <h2>Designed with Passion for Exceptional Gameplay</h2>
@@ -43,6 +50,15 @@ const Introduction: React.FC = () => {
               width: 520px;
               margin: 0 auto;
               padding-top: 20px;
+
+              ${media.down("xs")`
+                width: 100%;
+
+                li {
+                  text-align: center;
+                  padding-bottom: 10px;
+                }
+              `};
             `}
           >
             <li>Blazingly fast and lightweight for maximum performance</li>
@@ -65,6 +81,14 @@ const Introduction: React.FC = () => {
           img {
             margin: 0 auto;
           }
+
+          ${media.down("sm")`
+            height: auto;
+
+            img {
+              width: 100%;
+            }
+          `};
         `}
       >
         <LazyImage src="/images/unitframes.gif" alt="Toggle additional action bars" />

@@ -2,16 +2,39 @@
 import { jsx, css } from "@emotion/core";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import Img from "gatsby-image";
+import Img, { FixedObject, FluidObject } from "gatsby-image";
 import BannerHeader from "./banner-header";
 import { overlayCss } from "../../../styles/css/containers";
 import Particles from "react-particles-js";
 import colors from "../../../styles/colors";
+import media, { breakpoints } from "../../../styles/media";
+
+interface IImageSharpProps {
+  mobile: {
+    childImageSharp: {
+      fixed: FixedObject;
+      fluid: FluidObject;
+    };
+  };
+  desktop: {
+    childImageSharp: {
+      fixed: FixedObject;
+      fluid: FluidObject;
+    };
+  };
+}
 
 const Banner: React.FC = () => {
   const data: IImageSharpProps = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "banner.jpg" }) {
+      mobile: file(relativePath: { eq: "mobile-banner.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 576) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      desktop: file(relativePath: { eq: "banner.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid
@@ -21,6 +44,14 @@ const Banner: React.FC = () => {
     }
   `);
 
+  const sources = [
+    data.mobile.childImageSharp.fluid,
+    {
+      ...data.desktop.childImageSharp.fluid,
+      media: `(min-width: 576px)`,
+    },
+  ];
+
   return (
     <div
       role="banner"
@@ -29,7 +60,7 @@ const Banner: React.FC = () => {
       `}
     >
       <Img
-        fluid={data.file.childImageSharp.fluid}
+        fluid={sources}
         draggable={false}
         css={css`
           height: calc(100vh - 40px) !important;
@@ -95,6 +126,11 @@ const Banner: React.FC = () => {
             align-items: flex-end;
             padding-bottom: 100px;
             box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.5);
+
+            ${media.down("xs")`
+              align-items: flex-start;
+              padding-bottom: 0;
+            `};
           `,
         ]}
       >

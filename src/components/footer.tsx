@@ -5,6 +5,7 @@ import React, { useContext } from "react";
 import colors from "../styles/colors";
 import Section from "../styles/css/containers";
 import { link } from "../styles/css/text";
+import media from "../styles/media";
 import SocialMediaIcons from "./home/banner/social-media-icons";
 import { LayoutContext } from "./layout";
 
@@ -35,6 +36,14 @@ const Footer: React.FC = () => {
             top: 75px;
             z-index: -10;
           }
+
+          ${media.down("xs")`
+            padding-top: 50px;
+
+            &::before {
+              height: 80px;   
+            }
+          `};
         `}
       `}
     >
