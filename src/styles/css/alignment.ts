@@ -11,3 +11,7 @@ export const evenSpacing = css`
     margin: ${vars.columnSpacing};
   }
 `;
+
+export const flex = css`
+  display: flex;
+`;

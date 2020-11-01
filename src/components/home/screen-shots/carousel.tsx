@@ -1,214 +1,36 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React, { useContext } from "react";
-import colors from "../../../styles/colors";
-import Img, { FixedObject } from "gatsby-image";
-import { ReactComponent as ArrowButton } from "../../../images/carousel-arrow.svg";
-import vars from "../../../styles/variables";
+import React from "react";
+import Img from "gatsby-image";
 import { Fade } from "react-awesome-reveal";
-import { breakpoints } from "../../../styles/media";
-import { ICarouselImagesNode } from ".";
-import { evenSpacing } from "../../../styles/css/alignment";
-import buttons from "../../../styles/css/buttons";
-
-const arrowCss = css`
-  outline: none;
-  border: none;
-  padding: 0 20px;
-  background: none;
-
-  &:hover {
-    cursor: pointer;
-    path {
-      fill: ${colors.link.hover};
-    }
-  }
-`;
-
-interface IOptionProps {
-  fixedImage: FixedObject;
-  imageAlt: string;
-}
-
-const Option: React.FC<IOptionProps> = ({ fixedImage, imageAlt }) => {
-  return <Img fixed={fixedImage} alt={imageAlt} />;
-};
+import Slide, { ISlideProps } from "./slide";
+import SliderNavBar from "./slide-nav-bar";
 
 interface ICarouselContext {
-  clickOption: (next: number) => void;
-  current: number;
+  shiftRight: () => void;
+  shiftLeft: () => void;
+  setSelected: (selected: number) => void;
   order: number[];
+  selected: number;
 }
 
-const CarouselContext = React.createContext<ICarouselContext | null>(null);
-
-const SliderNavBar: React.FC = ({ children }) => {
-  const { clickOption, current, order } = useContext(CarouselContext) as ICarouselContext;
-
-  const options: React.ReactNode[] = [];
-  React.Children.forEach(children, (option, originalPosition) => {
-    const position = order[originalPosition];
-    options[position] = option;
-  });
-
-  return (
-    <nav
-      role="toolbar"
-      css={css`
-        display: flex;
-        margin-top: 15px;
-        padding: 20px 0;
-      `}
-    >
-      <button onClick={() => clickOption(current - 1)} css={arrowCss}>
-        <ArrowButton title="previous" />
-      </button>
-
-      <ul
-        css={css`
-          display: flex;
-        `}
-      >
-        {options.map((option, key) => (
-          <li
-            key={key}
-            onClick={() => clickOption(key)}
-            className={key === current ? "active" : ""}
-            css={css`
-              margin: 0 5px;
-              user-select: none;
-              flex: 1;
-              max-height: 82px;
-
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                border-radius: ${vars.borderRadius};
-              }
-
-              &.active {
-                filter: drop-shadow(0 2px 4px ${colors.black});
-
-                img {
-                  border: 2px solid ${colors.white};
-                  filter: brightness(1.5);
-                }
-              }
-
-              &:hover {
-                cursor: pointer;
-                filter: drop-shadow(0 2px 4px ${colors.black});
-                img {
-                  filter: brightness(1.8);
-                }
-              }
-            `}
-          >
-            {option}
-          </li>
-        ))}
-      </ul>
-
-      <button
-        onClick={() => clickOption(current + 1)}
-        css={[
-          arrowCss,
-          css`
-            transform: rotate(180deg);
-          `,
-        ]}
-      >
-        <ArrowButton title="next" />
-      </button>
-    </nav>
-  );
+const dummyFunc = () => {
+  return;
 };
-
-interface ISlideProps {
-  header: string;
-  node: ICarouselImagesNode;
-  imageSrc: string;
-}
-
-const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
-  return (
-    <div css={evenSpacing}>
-      <div
-        css={css`
-          flex: 2;
-          position: relative;
-          padding: 10px;
-          border: 3px solid ${colors.white};
-          border-radius: 20px;
-
-          img {
-            border-radius: 20px;
-          }
-
-          &::before {
-            content: "Click image to enlarge";
-            height: 24px;
-            width: 40%;
-            top: -12px;
-            right: 50%;
-            background-color: ${colors.blue.dark};
-            position: absolute;
-            font-size: 0.7rem;
-            color: ${colors.white};
-            line-height: 24px;
-            padding-left: 10px;
-          }
-        `}
-      >
-        <a href={imageSrc} rel="noreferrer" target="_blank">
-          <Img fluid={node.preview.fluid} alt={node.name} />
-        </a>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          padding-top: 40px;
-          padding-bottom: 40px;
-
-          p {
-            border-left: 3px solid ${colors.blue.faint};
-            margin-left: -22px;
-            padding-left: 15px;
-          }
-
-          a {
-            ${buttons["text"]};
-          }
-        `}
-      >
-        <Fade
-          triggerOnce
-          css={css`
-            height: 180px;
-
-            h3 {
-              color: ${colors.white};
-              margin-right: 40px;
-              text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            }
-          `}
-        >
-          <h3>{header}</h3>
-        </Fade>
-
-        <Fade triggerOnce>{children}</Fade>
-      </div>
-    </div>
-  );
-};
+export const CarouselContext = React.createContext<ICarouselContext>({
+  shiftRight: dummyFunc,
+  shiftLeft: dummyFunc,
+  setSelected: dummyFunc,
+  order: [],
+  selected: 0,
+});
 
 interface ICarouselState {
-  current: number;
   order: number[];
   mobile: boolean;
+  selected: number;
+  maxOptions: number;
 }
 
 class Carousel extends React.Component<{}, ICarouselState> {
@@ -216,51 +38,75 @@ class Carousel extends React.Component<{}, ICarouselState> {
   static NavBar = SliderNavBar;
   static Option = Option;
 
-  handleOptionClick(next: number): void {
+  shiftLeft(): void {
     const { order } = this.state;
     const newOrder = [...order];
+    let pivot = this.state.selected + 1;
 
-    if (next >= order.length) {
-      next = 0;
-    } else if (next < 0) {
-      next = order.length - 1;
+    if (pivot >= order.length) {
+      pivot = 0;
+    } else if (pivot < 0) {
+      pivot = order.length - 1;
     }
 
-    if (window.innerWidth < breakpoints["xl"]) {
-      const proceeding = newOrder.splice(order.length - next, order.length);
-      newOrder.unshift(...proceeding);
-      next = 0;
+    // shift to start
+    const proceeding = newOrder.splice(order.length - pivot, order.length);
+    newOrder.unshift(...proceeding);
+    this.setState({ ...this.state, order: newOrder });
+  }
+
+  shiftRight(): void {
+    const { order } = this.state;
+    const newOrder = [...order];
+    let pivot = this.state.selected - 1;
+
+    if (pivot >= order.length) {
+      pivot = 0;
+    } else if (pivot < 0) {
+      pivot = order.length - 1;
     }
 
-    this.setState({ current: next, order: [...newOrder] });
+    // shift to start
+    const proceeding = newOrder.splice(order.length - pivot, order.length);
+    newOrder.unshift(...proceeding);
+    this.setState({ ...this.state, order: newOrder });
   }
 
-  checkWindowWidth(): void {
-    const mobile = window.innerWidth <= breakpoints["sm"];
-
-    if (this.state.mobile !== mobile) {
-      this.setState({ ...this.state, mobile: mobile });
-    }
+  setSelected(selected: number): void {
+    this.setState({ ...this.state, selected });
   }
 
-  componentDidMount(): void {
-    this.checkWindowWidth();
-    window.addEventListener("resize", () => this.checkWindowWidth());
-  }
+  // checkWindowWidth(): void {
+  //   const mobile = window.innerWidth <= breakpoints["sm"];
+
+  //   if (this.state.mobile !== mobile) {
+  //     this.setState({ ...this.state, mobile: mobile });
+  //   }
+  // }
+
+  // componentDidMount(): void {
+  //   this.checkWindowWidth();
+  //   window.addEventListener("resize", () => this.checkWindowWidth());
+  // }
 
   constructor(props: {}) {
     super(props);
-    this.handleOptionClick.bind(this);
+    this.shiftRight = this.shiftRight.bind(this);
+    this.shiftLeft = this.shiftLeft.bind(this);
+    this.setSelected = this.setSelected.bind(this);
+
     this.state = {
-      current: 0,
+      selected: 0,
       order: Array.from(Array(React.Children.count(this.props.children)).keys()),
       mobile: false,
+      maxOptions: 5,
     };
   }
 
   render(): JSX.Element {
     const slides: React.ReactNode[] = [];
 
+    // fill slides with children based on order state
     React.Children.forEach(this.props.children, (item, index) => {
       if (React.isValidElement(item)) {
         const e = item.type as React.FC;
@@ -274,14 +120,14 @@ class Carousel extends React.Component<{}, ICarouselState> {
 
     return (
       <div>
-        {slides[this.state.current]}{" "}
+        {slides[this.state.selected]}
         <CarouselContext.Provider
           value={{
-            clickOption: (next) => {
-              this.handleOptionClick(next);
-            },
+            shiftRight: this.shiftRight,
+            shiftLeft: this.shiftLeft,
+            setSelected: this.setSelected,
             order: this.state.order,
-            current: this.state.current,
+            selected: this.state.selected,
           }}
         >
           <Fade
@@ -296,10 +142,10 @@ class Carousel extends React.Component<{}, ICarouselState> {
                 const props = slide.props as ISlideProps & { children?: React.ReactNode };
 
                 return (
-                  <Option
+                  <Img
                     key={key}
-                    imageAlt={props.node.name}
-                    fixedImage={props.node.thumbnail.fixed}
+                    fixed={props.node.thumbnail.fixed}
+                    alt={props.node.name}
                   />
                 );
               })}
