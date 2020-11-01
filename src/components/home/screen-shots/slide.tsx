@@ -11,14 +11,26 @@ export interface ISlideProps {
   header: string;
   node: ICarouselImagesNode;
   imageSrc: string;
+  index: number;
+  total: number;
 }
 
-const Slide: React.FC<ISlideProps> = ({ header, node, imageSrc, children }) => {
+const Slide: React.FC<ISlideProps> = ({
+  header,
+  node,
+  imageSrc,
+  children,
+  index,
+  total,
+}) => {
   return (
     <div css={evenSpacing}>
       <SlideContainer>
         <a href={imageSrc} rel="noreferrer" target="_blank">
-          <Img fluid={node.preview.fluid} alt={node.name} />
+          <Img fluid={node.preview.fluid} alt={node.name}></Img>
+          <span>
+            {index + 1}/{total}
+          </span>
         </a>
       </SlideContainer>
       <SlideDetailsContainer>

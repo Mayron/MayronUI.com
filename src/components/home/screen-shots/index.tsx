@@ -136,6 +136,8 @@ const ScreenShots: React.FC = () => {
                 header={slideData.title}
                 node={node}
                 imageSrc={`images/carousel/${node.name}.jpg`}
+                total={data.allFile.edges.length}
+                index={key}
               >
                 <p dangerouslySetInnerHTML={{ __html: slideData.summary }}></p>
               </Carousel.Slide>

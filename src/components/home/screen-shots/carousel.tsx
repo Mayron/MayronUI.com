@@ -13,6 +13,7 @@ interface ICarouselContext {
   setSelected: (selected: number) => void;
   order: number[];
   selected: number;
+  maxNavItems: number;
 }
 
 const dummyFunc = () => {
@@ -24,13 +25,14 @@ export const CarouselContext = React.createContext<ICarouselContext>({
   setSelected: dummyFunc,
   order: [],
   selected: 0,
+  maxNavItems: 0,
 });
 
 interface ICarouselState {
   order: number[];
   mobile: boolean;
   selected: number;
-  maxOptions: number;
+  maxNavItems: number;
 }
 
 class Carousel extends React.Component<{}, ICarouselState> {
@@ -41,16 +43,9 @@ class Carousel extends React.Component<{}, ICarouselState> {
   shiftLeft(): void {
     const { order } = this.state;
     const newOrder = [...order];
-    let pivot = this.state.selected + 1;
-
-    if (pivot >= order.length) {
-      pivot = 0;
-    } else if (pivot < 0) {
-      pivot = order.length - 1;
-    }
 
     // shift to start
-    const proceeding = newOrder.splice(order.length - pivot, order.length);
+    const proceeding = newOrder.splice(order.length - 1, order.length);
     newOrder.unshift(...proceeding);
     this.setState({ ...this.state, order: newOrder });
   }
@@ -58,16 +53,9 @@ class Carousel extends React.Component<{}, ICarouselState> {
   shiftRight(): void {
     const { order } = this.state;
     const newOrder = [...order];
-    let pivot = this.state.selected - 1;
-
-    if (pivot >= order.length) {
-      pivot = 0;
-    } else if (pivot < 0) {
-      pivot = order.length - 1;
-    }
 
     // shift to start
-    const proceeding = newOrder.splice(order.length - pivot, order.length);
+    const proceeding = newOrder.splice(order.length - (order.length - 1), order.length);
     newOrder.unshift(...proceeding);
     this.setState({ ...this.state, order: newOrder });
   }
@@ -99,7 +87,7 @@ class Carousel extends React.Component<{}, ICarouselState> {
       selected: 0,
       order: Array.from(Array(React.Children.count(this.props.children)).keys()),
       mobile: false,
-      maxOptions: 5,
+      maxNavItems: 5,
     };
   }
 
@@ -128,11 +116,14 @@ class Carousel extends React.Component<{}, ICarouselState> {
             setSelected: this.setSelected,
             order: this.state.order,
             selected: this.state.selected,
+            maxNavItems: this.state.maxNavItems,
           }}
         >
           <Fade
             triggerOnce
             css={css`
+              display: flex;
+              justify-content: center;
               height: 124.16px;
             `}
           >

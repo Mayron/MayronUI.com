@@ -9,6 +9,8 @@ export const OptionListItem = styled.li`
   user-select: none;
   flex: 1;
   max-height: 82px;
+  background-color: #053361;
+  border-radius: ${vars.borderRadius};
 
   img {
     width: 100%;
@@ -22,7 +24,7 @@ export const OptionListItem = styled.li`
 
     img {
       border: 2px solid ${colors.white};
-      filter: brightness(1.5);
+      filter: brightness(1.2);
     }
   }
 
@@ -30,13 +32,14 @@ export const OptionListItem = styled.li`
     cursor: pointer;
     filter: drop-shadow(0 2px 4px ${colors.black});
     img {
-      filter: brightness(1.8);
+      filter: brightness(1.4);
     }
   }
 `;
 
 export const OptionsNavBar = styled.nav`
   display: flex;
+  align-items: center;
   margin-top: 15px;
   padding: 20px 0;
 `;
@@ -64,6 +67,30 @@ export const SlideContainer = styled.div`
     color: ${colors.white};
     line-height: 24px;
     padding-left: 10px;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    filter: drop-shadow(0 2px 4px ${colors.black});
+
+    &:hover {
+      img {
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-weight: 700;
+    color: ${colors.white};
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom-right-radius: 20px;
+    padding: 8px;
+    border-top-left-radius: 12px;
   }
 `;
 
@@ -99,6 +126,7 @@ export const arrowCss = css`
   border: none;
   padding: 0 20px;
   background: none;
+  height: 33px;
 
   &:hover {
     cursor: pointer;
