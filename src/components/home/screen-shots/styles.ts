@@ -2,6 +2,7 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import colors from "../../../styles/colors";
 import buttons from "../../../styles/css/buttons";
+import media from "../../../styles/media";
 import vars from "../../../styles/variables";
 
 export const OptionListItem = styled.li`
@@ -40,8 +41,11 @@ export const OptionListItem = styled.li`
 export const OptionsNavBar = styled.nav`
   display: flex;
   align-items: center;
-  margin-top: 15px;
-  padding: 20px 0;
+  padding: 40px 0 20px 0;
+
+  ${media.down("md")`
+    padding: 0;
+  `};
 `;
 
 export const SlideContainer = styled.div`
@@ -50,6 +54,10 @@ export const SlideContainer = styled.div`
   padding: 10px;
   border: 3px solid ${colors.white};
   border-radius: 20px;
+
+  ${media.up("lg")`
+    margin-right: 20px;
+  `};
 
   img {
     border-radius: 20px;
@@ -96,15 +104,23 @@ export const SlideContainer = styled.div`
 
 export const SlideDetailsContainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  padding-top: 40px;
   padding-bottom: 40px;
 
-  p {
-    border-left: 3px solid ${colors.blue.faint};
-    margin-left: -22px;
-    padding-left: 15px;
-  }
+  ${media.up("lg")`
+    p {
+      border-left: 3px solid ${colors.blue.faint};
+      margin-left: -22px;
+      padding-left: 15px;
+    }
+  `};
+
+  ${media.down("md")`
+    h3, p {
+      text-align: center;
+    }
+  `};
 
   a {
     ${buttons["text"]};
@@ -112,12 +128,21 @@ export const SlideDetailsContainer = styled.div`
 
   & > :first-child {
     height: 180px;
+
+    ${media.down("md")`    
+      height: auto;
+      padding-bottom: 20px;
+      padding-top: 20px;    
+    `};
   }
 
   h3 {
-    color: ${colors.white};
     margin-right: 40px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    ${media.up("lg")`
+      color: ${colors.white};
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    `};
   }
 `;
 
@@ -133,5 +158,30 @@ export const arrowCss = css`
     path {
       fill: ${colors.link.hover};
     }
+  }
+`;
+
+export const ScreenShotsContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 3000px;
+    height: 280px;
+    background-color: ${colors.blue.dark};
+    transform: rotate(-5deg);
+    left: -100px;
+    top: -130px;
+
+    ${media.down("xl")`
+      height: 240px;
+    `};
+  }
+
+  section {
+    padding-bottom: 20px;
   }
 `;

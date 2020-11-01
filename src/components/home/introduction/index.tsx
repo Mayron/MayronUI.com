@@ -82,7 +82,7 @@ const Introduction: React.FC = () => {
             margin: 0 auto;
           }
 
-          ${media.down("sm")`
+          ${media.down("md")`
             height: auto;
 
             img {

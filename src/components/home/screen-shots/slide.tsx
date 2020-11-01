@@ -6,6 +6,7 @@ import { ICarouselImagesNode } from ".";
 import { evenSpacing } from "../../../styles/css/alignment";
 import { SlideContainer, SlideDetailsContainer } from "./styles";
 import Img from "gatsby-image";
+import media from "../../../styles/media";
 
 export interface ISlideProps {
   header: string;
@@ -24,7 +25,14 @@ const Slide: React.FC<ISlideProps> = ({
   total,
 }) => {
   return (
-    <div css={evenSpacing}>
+    <div
+      css={css`
+        ${media.up("lg")`
+        display: flex;
+        
+      `};
+      `}
+    >
       <SlideContainer>
         <a href={imageSrc} rel="noreferrer" target="_blank">
           <Img fluid={node.preview.fluid} alt={node.name}></Img>

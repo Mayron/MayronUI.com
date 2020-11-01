@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import { Fade } from "react-awesome-reveal";
 import Slide, { ISlideProps } from "./slide";
 import SliderNavBar from "./slide-nav-bar";
+import media, { breakpoints } from "../../../styles/media";
 
 interface ICarouselContext {
   shiftRight: () => void;
@@ -30,7 +31,6 @@ export const CarouselContext = React.createContext<ICarouselContext>({
 
 interface ICarouselState {
   order: number[];
-  mobile: boolean;
   selected: number;
   maxNavItems: number;
 }
@@ -40,53 +40,59 @@ class Carousel extends React.Component<{}, ICarouselState> {
   static NavBar = SliderNavBar;
   static Option = Option;
 
-  shiftLeft(): void {
+  shift(start: number): void {
     const { order } = this.state;
     const newOrder = [...order];
-
-    // shift to start
-    const proceeding = newOrder.splice(order.length - 1, order.length);
+    const proceeding = newOrder.splice(start, order.length);
     newOrder.unshift(...proceeding);
     this.setState({ ...this.state, order: newOrder });
   }
 
-  shiftRight(): void {
-    const { order } = this.state;
-    const newOrder = [...order];
+  shiftLeft(): void {
+    this.shift(this.state.order.length - 1);
+  }
 
-    // shift to start
-    const proceeding = newOrder.splice(order.length - (order.length - 1), order.length);
-    newOrder.unshift(...proceeding);
-    this.setState({ ...this.state, order: newOrder });
+  shiftRight(): void {
+    this.shift(this.state.order.length - (this.state.order.length - 1));
   }
 
   setSelected(selected: number): void {
     this.setState({ ...this.state, selected });
   }
 
-  // checkWindowWidth(): void {
-  //   const mobile = window.innerWidth <= breakpoints["sm"];
+  checkWindowWidth(): void {
+    let maxNavItems = 5;
 
-  //   if (this.state.mobile !== mobile) {
-  //     this.setState({ ...this.state, mobile: mobile });
-  //   }
-  // }
+    if (window.innerWidth <= 750) {
+      maxNavItems = 0;
+    } else if (window.innerWidth <= 960) {
+      maxNavItems = 3;
+    } else if (window.innerWidth <= 1140) {
+      maxNavItems = 4;
+    }
 
-  // componentDidMount(): void {
-  //   this.checkWindowWidth();
-  //   window.addEventListener("resize", () => this.checkWindowWidth());
-  // }
+    if (this.state.maxNavItems !== maxNavItems) {
+      this.setState({ ...this.state, maxNavItems });
+    }
+  }
+
+  componentDidMount(): void {
+    this.checkWindowWidth();
+    window.addEventListener("resize", this.checkWindowWidth);
+
+    console.log("start");
+  }
 
   constructor(props: {}) {
     super(props);
     this.shiftRight = this.shiftRight.bind(this);
     this.shiftLeft = this.shiftLeft.bind(this);
     this.setSelected = this.setSelected.bind(this);
+    this.checkWindowWidth = this.checkWindowWidth.bind(this);
 
     this.state = {
       selected: 0,
       order: Array.from(Array(React.Children.count(this.props.children)).keys()),
-      mobile: false,
       maxNavItems: 5,
     };
   }
@@ -107,7 +113,7 @@ class Carousel extends React.Component<{}, ICarouselState> {
     });
 
     return (
-      <div>
+      <React.Fragment>
         {slides[this.state.selected]}
         <CarouselContext.Provider
           value={{
@@ -125,6 +131,10 @@ class Carousel extends React.Component<{}, ICarouselState> {
               display: flex;
               justify-content: center;
               height: 124.16px;
+
+              ${media.down("md")`
+                height: auto;
+              `};
             `}
           >
             <Carousel.NavBar>
@@ -143,7 +153,7 @@ class Carousel extends React.Component<{}, ICarouselState> {
             </Carousel.NavBar>
           </Fade>
         </CarouselContext.Provider>
-      </div>
+      </React.Fragment>
     );
   }
 }

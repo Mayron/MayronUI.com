@@ -64,6 +64,18 @@ const Banner: React.FC = () => {
         draggable={false}
         css={css`
           height: calc(100vh - 40px) !important;
+
+          ${media.down("md")`
+            max-height: 768px;
+          `};
+
+          ${media.between("sm", "lg")`
+            img {
+              left: auto !important;
+              right: -400px !important;
+              width: auto !important;
+            }
+          `};
         `}
       />
       <Particles
@@ -129,7 +141,11 @@ const Banner: React.FC = () => {
 
             ${media.down("xs")`
               align-items: flex-start;
-              padding-bottom: 0;
+              padding-bottom: 0;  
+            `};
+
+            ${media.down("md")`
+              padding-bottom: 50px;            
             `};
           `,
         ]}

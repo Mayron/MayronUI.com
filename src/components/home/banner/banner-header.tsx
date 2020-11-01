@@ -7,6 +7,7 @@ import colors from "../../../styles/colors";
 import { evenSpacing } from "../../../styles/css/alignment";
 import { container } from "../../../styles/css/containers";
 import media from "../../../styles/media";
+import vars from "../../../styles/variables";
 import Button from "../../widgets/button";
 import SocialMediaIcons from "./social-media-icons";
 
@@ -31,11 +32,12 @@ const BannerHeader: React.FC = () => {
             text-align: left;
             font-size: 4rem;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
           }
 
           p {
             color: ${colors.white};
-            font-size: 1.25rem;
+            font-size: ${vars.largeFontSize};
             width: 540px;
             border-top: 1px solid ${colors.white};
             padding: 10px 0;

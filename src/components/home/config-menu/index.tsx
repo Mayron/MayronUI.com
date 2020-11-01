@@ -47,7 +47,7 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
             css={css`
               display: flex;
 
-              ${media.down("xs")`
+              ${media.down("md")`
                 flex-direction: column;    
 
                 ul { 

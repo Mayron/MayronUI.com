@@ -7,6 +7,7 @@ import colors from "../../../styles/colors";
 import { Section } from "../../../styles/css/containers";
 import media from "../../../styles/media";
 import Carousel from "./carousel";
+import { ScreenShotsContainer } from "./styles";
 
 type SlideNode = {
   title: string;
@@ -98,32 +99,7 @@ const ScreenShots: React.FC = () => {
   `);
 
   return (
-    <div
-      css={css`
-        position: relative;
-        overflow: hidden;
-
-        ${media.down("sm")`
-          display: none;
-        `};
-
-        &::before {
-          content: " ";
-          position: absolute;
-          display: block;
-          width: 3000px;
-          height: 325px;
-          background-color: ${colors.blue.dark};
-          transform: rotate(-5deg);
-          left: -100px;
-          top: -130px;
-        }
-
-        section {
-          padding-bottom: 20px;
-        }
-      `}
-    >
+    <ScreenShotsContainer>
       <Section>
         <Carousel>
           {data.allFile.edges.map((edge, key) => {
@@ -145,7 +121,7 @@ const ScreenShots: React.FC = () => {
           })}
         </Carousel>
       </Section>
-    </div>
+    </ScreenShotsContainer>
   );
 };
 
