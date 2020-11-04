@@ -8,7 +8,7 @@ export default {
   link: {
     default: "#0067de",
     hover: "#268bff",
-    active: "#003675",
+    active: "#0054b5",
   },
 
   text: {

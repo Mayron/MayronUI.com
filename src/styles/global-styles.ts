@@ -100,6 +100,11 @@ const globalStyles = css`
     }
   }
 
+  // important for icons in buttons so that buttons are the correct height
+  svg {
+    display: block;
+  }
+
   input,
   textarea {
     background: none;

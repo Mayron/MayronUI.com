@@ -15,9 +15,17 @@ interface IListItemProps {
   top: number;
   left?: number;
   right?: number;
+  lgLeft?: number;
 }
 
-const ListItem: React.FC<IListItemProps> = ({ label, top, left, children, right }) => {
+const ListItem: React.FC<IListItemProps> = ({
+  label,
+  top,
+  left,
+  children,
+  right,
+  lgLeft,
+}) => {
   return (
     <li
       css={css`
@@ -29,6 +37,8 @@ const ListItem: React.FC<IListItemProps> = ({ label, top, left, children, right 
           left: ${left}px;
         `};
 
+        ${lgLeft !== undefined && media.down("lg")`left: ${lgLeft}px;`};
+
         ${right !== undefined &&
         css`
           right: ${right}px;
@@ -37,7 +47,19 @@ const ListItem: React.FC<IListItemProps> = ({ label, top, left, children, right 
         strong {
           display: block;
           margin-bottom: 5px;
+          background-color: ${colors.white};
+          display: block;
+          width: fit-content;
+          padding-right: 20px;
         }
+
+        ${media.down("md")`
+          max-width: 600px;
+
+           strong {
+            font-size: 1.1rem;
+           }
+        `};
       `}
     >
       <p>
@@ -77,13 +99,17 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
           position: absolute;
           display: block;
           width: 3000px;
-          height: 380px;
+          height: 330px;
           background-color: ${colors.blue.dark};
           transform: rotate(6deg);
           left: -100px;
           top: -130px;
 
-          ${media.down("xs")`
+          ${media.down("xl")`
+            height: 380px;
+          `};
+
+          ${media.down("md")`
             height: 500px;
           `};
         }
@@ -97,7 +123,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
           width: 340px;
           min-width: 340px;
 
-          ${media.down("xs")`
+          ${media.down("md")`
             text-align: center;
             margin-top: 30px;
             margin-right: 0;
@@ -125,8 +151,9 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             justify-content: flex-end;
             margin-left: auto;
 
-            ${media.down("xs")`
+            ${media.down("md")`
               padding-left: 0;
+              justify-content: center;
             `};
           `}
         >
@@ -146,7 +173,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
                 margin-right: 57px;
                 top: 5px;
 
-                ${media.down("xs")`
+                ${media.down("md")`
                   margin-right: 0;
                   margin-bottom: 30px;
                   width: 355px !important;
@@ -161,7 +188,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
                 top: 107px;
                 right: -70px;
 
-                ${media.down("xs")`
+                ${media.down("md")`
                   display: none;
                 `};
               `}
@@ -172,7 +199,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             css={css`
               list-style-type: disc;
 
-              ${media.up("sm")`
+              ${media.up("lg")`
                 margin-bottom: 80px;
 
                 li {
@@ -180,7 +207,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
                 }
               `};
 
-              ${media.down("xs")`
+              ${media.down("md")`
                 padding-inline-start: 30px;
 
                 li {
@@ -197,7 +224,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
               With one click, you can switch the profiles of several addOns to best suit
               your gameplay.
             </ListItem>
-            <ListItem top={-80} left={120} label="Copy your chat's history">
+            <ListItem top={-80} left={120} lgLeft={70} label="Copy your chat's history">
               View all of your chat&#39;s history across all tabs in a separate window
               with support for copy/paste.
             </ListItem>

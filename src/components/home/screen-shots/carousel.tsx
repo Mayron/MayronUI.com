@@ -64,7 +64,7 @@ class Carousel extends React.Component<{}, ICarouselState> {
     let maxNavItems = 5;
 
     if (window.innerWidth <= 750) {
-      maxNavItems = 0;
+      maxNavItems = 4;
     } else if (window.innerWidth <= 960) {
       maxNavItems = 3;
     } else if (window.innerWidth <= 1140) {
@@ -79,8 +79,6 @@ class Carousel extends React.Component<{}, ICarouselState> {
   componentDidMount(): void {
     this.checkWindowWidth();
     window.addEventListener("resize", this.checkWindowWidth);
-
-    console.log("start");
   }
 
   constructor(props: {}) {

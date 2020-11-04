@@ -2,12 +2,12 @@
 import { jsx, css } from "@emotion/core";
 import React, { useContext } from "react";
 import { CarouselContext } from "./carousel";
-import { arrowCss, OptionListItem, OptionsNavBar } from "./styles";
+import { arrowCss, OptionBullet, OptionListItem, OptionsNavBar } from "./styles";
 import { ReactComponent as ArrowSvg } from "../../../images/carousel-arrow.svg";
 import { flex } from "../../../styles/css/alignment";
 
 const SliderNavBar: React.FC = ({ children }) => {
-  const { shiftRight, shiftLeft, setSelected, selected, maxNavItems } = useContext(
+  const { shiftRight, shiftLeft, setSelected, selected, maxNavItems, order } = useContext(
     CarouselContext,
   );
   const thumbnails: React.ReactNode[] = [];
@@ -27,13 +27,23 @@ const SliderNavBar: React.FC = ({ children }) => {
 
       <ul css={flex}>
         {thumbnails.slice(0, maxNavItems).map((img, index) => (
-          <OptionListItem
-            key={index}
-            onClick={() => setSelected(index)}
-            className={index === selected ? "active" : ""}
-          >
-            {img}
-          </OptionListItem>
+          <React.Fragment key={index}>
+            {window.innerWidth <= 750 ? (
+              <OptionBullet
+                onClick={() => setSelected(index)}
+                className={index === selected ? "active" : ""}
+              >
+                {order[index] + 1}
+              </OptionBullet>
+            ) : (
+              <OptionListItem
+                onClick={() => setSelected(index)}
+                className={index === selected ? "active" : ""}
+              >
+                {img}
+              </OptionListItem>
+            )}
+          </React.Fragment>
         ))}
       </ul>
 

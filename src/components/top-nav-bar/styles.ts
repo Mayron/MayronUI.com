@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import colors from "../../styles/colors";
 import { container } from "../../styles/css/containers";
+import media from "../../styles/media";
 import vars from "../../styles/variables";
 
 export const NavBarWrapper = styled.div`
@@ -16,6 +17,14 @@ const NavBarContainer = styled.div`
   ${container};
   display: flex;
   min-height: 45px;
+
+  ${media.down("sm")`
+    justify-content: space-between;
+
+    & > * {
+      padding: 0 10px;
+    }
+  `};
 `;
 
 const NavBar = styled.nav`
@@ -70,11 +79,32 @@ const Logo = styled.img`
   }
 `;
 
+const BurgerButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  g {
+    stroke: ${colors.link.default};
+  }
+
+  &:hover g {
+    stroke: ${colors.link.hover};
+  }
+
+  &:active g {
+    stroke: ${colors.link.active};
+  }
+`;
+
 export default {
   NavBarWrapper,
   NavBarContainer,
   NavBar,
   NavItemList,
   NavItem,
+  BurgerButton,
   Logo,
 };

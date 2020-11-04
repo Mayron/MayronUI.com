@@ -38,6 +38,27 @@ export const OptionListItem = styled.li`
   }
 `;
 
+export const OptionBullet = styled.li`
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: ${colors.link.active};
+  margin: 0 15px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 500;
+  color: ${colors.white};
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${colors.link.hover};
+  }
+
+  &.active {
+    background-color: ${colors.link.hover};
+  }
+`;
+
 export const OptionsNavBar = styled.nav`
   display: flex;
   align-items: center;
@@ -45,6 +66,8 @@ export const OptionsNavBar = styled.nav`
 
   ${media.down("md")`
     padding: 0;
+    width: 100%;
+    justify-content: space-evenly;
   `};
 `;
 
@@ -143,6 +166,10 @@ export const SlideDetailsContainer = styled.div`
       color: ${colors.white};
       text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     `};
+
+    ${media.down("md")`
+      margin-right: 0;
+    `};
   }
 `;
 
@@ -178,6 +205,10 @@ export const ScreenShotsContainer = styled.div`
 
     ${media.down("xl")`
       height: 240px;
+    `};
+
+    ${media.down("xs")`
+      height: 190px;
     `};
   }
 

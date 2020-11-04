@@ -1,5 +1,6 @@
 import { css, SerializedStyles } from "@emotion/core";
 import colors from "../colors";
+import media from "../media";
 import vars from "../variables";
 
 export type ButtonType = "primary" | "secondary" | "text";
@@ -37,6 +38,14 @@ const primary = css`
     font-size: 1.1rem;
     line-height: 44px;
     height: 44px;
+    min-height: 44px;
+
+    ${media.down("sm")`
+    font-size: 1.2rem;
+      line-height: 50px;
+      height: 50px;
+      min-height: 50px;
+    `};
   }
 `;
 

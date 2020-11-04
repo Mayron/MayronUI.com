@@ -85,7 +85,7 @@ const BannerHeader: React.FC = () => {
 
               a {
                 margin: 0;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
 
                 &:last-of-type {
                   margin-bottom: 0;
