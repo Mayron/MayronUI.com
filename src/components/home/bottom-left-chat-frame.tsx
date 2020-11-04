@@ -119,7 +119,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
           text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
           text-align: right;
           margin-bottom: 10px;
-          margin-right: 30px;
+          margin-right: 57px;
           width: 340px;
           min-width: 340px;
 
@@ -128,6 +128,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             margin-top: 30px;
             margin-right: 0;
             width: 100%;
+            max-width: 400px;
           `};
         }
 

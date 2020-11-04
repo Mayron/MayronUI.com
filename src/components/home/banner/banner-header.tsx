@@ -21,7 +21,6 @@ const BannerHeader: React.FC = () => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding: 40px 0;
         `,
       ]}
     >

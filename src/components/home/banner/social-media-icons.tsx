@@ -25,7 +25,14 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
 
         ${media.down("xs")`
           justify-content: space-evenly;
-          background-color: rgba(0, 0, 0, 0.5);
+
+          ${
+            !includePatreon &&
+            css`
+              background-color: rgba(0, 0, 0, 0.5);
+            `
+          };
+          
           padding: 10px;
           border-radius: 4px;
           margin-top: 20px;

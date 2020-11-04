@@ -40,7 +40,7 @@ const primary = css`
     height: 44px;
     min-height: 44px;
 
-    ${media.down("sm")`
+    ${media.down("xs")`
     font-size: 1.2rem;
       line-height: 50px;
       height: 50px;

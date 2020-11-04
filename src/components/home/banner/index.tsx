@@ -141,11 +141,11 @@ const Banner: React.FC = () => {
 
             ${media.down("xs")`
               align-items: flex-start;
-              padding-bottom: 0;  
             `};
 
             ${media.down("md")`
-              padding-bottom: 50px;            
+              padding-bottom: 40px;
+              padding-top: 40px;      
             `};
           `,
         ]}

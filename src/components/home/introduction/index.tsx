@@ -29,7 +29,7 @@ const Introduction: React.FC = () => {
               padding: 0 100px;
             }
 
-            ${media.down("xs")`
+            ${media.down("sm")`
               h2, p {
                 padding: 0;
               }

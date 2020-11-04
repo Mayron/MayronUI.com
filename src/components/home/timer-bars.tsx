@@ -39,7 +39,6 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
           css={css`
             display: flex;
             padding-bottom: 0;
-            padding-top: 60px;
 
             & > * {
               flex: 1;
@@ -47,11 +46,12 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
 
             h2 {
               margin-bottom: 30px;
+              text-align: left;
             }
 
             ul {
               list-style-type: disc;
-              padding-inline-start: 50px;
+              padding-inline-start: 20px;
             }
 
             li {
@@ -62,9 +62,17 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
               }
             }
 
-            ${media.down("xs")`
+            ${media.up("md")`
+              padding-top: 50px;
+            `};
+
+            ${media.down("sm")`
               flex-direction: column;
-              padding-top: 40px;
+              padding-bottom: 0;
+
+              h2 {
+                text-align: center;
+              }
 
               ul {
                 padding-inline-start: 30px;
