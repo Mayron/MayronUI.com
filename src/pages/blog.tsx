@@ -111,7 +111,7 @@ const BlogPage: React.FC<RouteComponentProps> = () => {
   return (
     <Layout title="Blog" gaCategory="Blog" backgroundColor="#F8F8F8">
       <Section
-        width="text"
+        widthType="text"
         css={css`
           padding-bottom: 30px;
         `}

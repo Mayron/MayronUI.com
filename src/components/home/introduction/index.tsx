@@ -11,7 +11,7 @@ const Introduction: React.FC = () => {
   return (
     <Section
       verticalSpacing="large"
-      width="slim"
+      widthType="slim"
       css={css`
         padding-bottom: 0 !important;
       `}

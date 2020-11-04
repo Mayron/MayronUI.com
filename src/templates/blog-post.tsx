@@ -60,7 +60,7 @@ const BlogPost: React.FC<IBlogPostProps> = ({ pageContext }) => {
 
   return (
     <Layout title={pageContext.title} gaCategory="BlogArticle" description={excerpt}>
-      <Section width="text">
+      <Section widthType="text">
         <BackButton href="/blog" text="Back to Blog" />
         <article
           css={css`

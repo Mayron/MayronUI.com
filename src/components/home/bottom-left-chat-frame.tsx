@@ -139,7 +139,7 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
     >
       <Section
         verticalSpacing="large"
-        width="slim"
+        widthType="slim"
         css={css`
           padding-top: 20px;
         `}

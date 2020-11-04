@@ -38,7 +38,7 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
         `};
       `}
     >
-      <Section width="slim" verticalSpacing="large">
+      <Section widthType="slim" verticalSpacing="large">
         <Fade triggerOnce>
           <header>
             <h2>{header}</h2>

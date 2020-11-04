@@ -35,7 +35,7 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
       <Fade triggerOnce>
         <Section
           verticalSpacing="large"
-          width="slim"
+          widthType="slim"
           css={css`
             display: flex;
             padding-bottom: 0;

@@ -20,7 +20,7 @@ export const container = css`
 export const sectionCss = css``;
 
 interface ISectionProps {
-  width?: "slim" | "text";
+  widthType?: "slim" | "text";
   verticalSpacing?: "large";
 }
 
@@ -51,14 +51,14 @@ export const Section = styled.section<ISectionProps>(
     }
 
     ${
-      props.width === "slim" &&
+      props.widthType === "slim" &&
       css`
         max-width: 1060px;
       `
     }
 
     ${
-      props.width === "text" &&
+      props.widthType === "text" &&
       css`
         max-width: ${vars.textContainerWidth};
       `

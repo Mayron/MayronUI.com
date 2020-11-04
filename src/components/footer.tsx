@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         `}
       >
         <Section
-          width="slim"
+          widthType="slim"
           css={css`
             display: flex;
             flex-direction: column;

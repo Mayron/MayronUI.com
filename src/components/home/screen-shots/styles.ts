@@ -68,9 +68,8 @@ export const OptionsNavBar = styled.nav`
     padding: 0;
     width: 100%;
     justify-content: space-evenly;
-
     border-bottom: 2px solid ${colors.blue.faint};
-    padding-bottom: 50px;
+    padding-bottom: ${vars.largeSectionSpacing};
     margin: 0 20px;
   `};
 `;
@@ -218,5 +217,9 @@ export const ScreenShotsContainer = styled.div`
 
   section {
     padding-bottom: 20px;
+
+    ${media.down("md")`
+    padding-bottom: 0;
+    `};
   }
 `;

@@ -8,7 +8,7 @@ import Button from "../components/widgets/button";
 const AboutPage: React.FC<RouteComponentProps> = () => {
   return (
     <Layout title="About" gaCategory="About" backgroundColor="#F8F8F8">
-      <Section width="text">
+      <Section widthType="text">
         <Panel header="What is MayronUI?">
           <p>
             MayronUI (commonly abbreviated to MUI) is a graphical user interface
