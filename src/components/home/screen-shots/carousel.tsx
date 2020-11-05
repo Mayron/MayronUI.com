@@ -38,7 +38,6 @@ interface ICarouselState {
 class Carousel extends React.Component<{}, ICarouselState> {
   static Slide = Slide;
   static NavBar = SliderNavBar;
-  static Option = Option;
 
   shift(start: number): void {
     const { order } = this.state;
