@@ -22,11 +22,10 @@ export default {
     darkest: "#0b0e10",
   },
 
-  red: {
-    errorUiInnerBorder: "#e0b4b4",
-    errorUiInnerBackground: "#fff6f6",
-    errorUiInnerText: "#9f3a38",
-    defaultIssueFlagBackground: "#ce4545",
+  warning: {
+    text: "#001a33",
+    border: "#9ecdff",
+    background: "#e0efff",
   },
 
   grey: {

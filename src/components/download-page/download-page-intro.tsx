@@ -3,7 +3,9 @@ import { jsx, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
 import { container } from "../../styles/css/containers";
+import media from "../../styles/media";
 import vars from "../../styles/variables";
+import BackButton from "../common/back-button";
 
 interface IDownloadPageIntroProps {
   header: string;
@@ -43,23 +45,47 @@ const DownloadPageIntro: React.FC<IDownloadPageIntroProps> = ({
   description,
 }) => {
   return (
-    <section
+    <div
       css={[
         container,
         css`
-          padding-top: ${vars.sectionSpacing};
-          position: relative;
           max-width: 1000px;
-          display: flex;
+          padding-top: 20px;
         `,
       ]}
     >
-      <Header>
-        <h1>{header}</h1>
-        <Description>{description}</Description>
-      </Header>
-      <Options>{children}</Options>
-    </section>
+      <BackButton href="/downloads" text="Back to Downloads" />
+      <section
+        css={css`
+          padding-top: ${vars.sectionSpacing};
+          position: relative;
+          display: flex;
+
+          ${media.down("sm")`
+            flex-direction: column;
+            align-items: center;
+
+            header h1 {
+              text-transform: none;
+              text-align: center;
+              font-size: 2rem;
+            }
+
+            p {
+              font-size: 1.1rem;
+              padding: 10px;
+              text-align: center;
+            }
+          `};
+        `}
+      >
+        <Header>
+          <h1>{header}</h1>
+          <Description>{description}</Description>
+        </Header>
+        <Options>{children}</Options>
+      </section>
+    </div>
   );
 };
 

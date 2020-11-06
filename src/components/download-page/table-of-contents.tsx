@@ -2,7 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { navigate } from "gatsby";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import colors from "../../styles/colors";
 import vars from "../../styles/variables";
 import { getSlug } from "../../utils/common";
@@ -18,11 +18,24 @@ const TableOfContents: React.FC<ITableOfContentsProps> = ({
   selected,
   onStepClick,
 }) => {
+  const [hidden, setHidden] = useState(false);
+
+  const handleWidthChange = () => setHidden(window.innerWidth < 1010);
+
+  useLayoutEffect(() => {
+    handleWidthChange();
+    window.addEventListener("resize", handleWidthChange);
+  }, []);
+
   const handleStepClick = (name: string, step: number) => {
     const id = getSlug(name);
     navigate(`#${id}`);
     onStepClick(step);
   };
+
+  if (hidden) {
+    return null;
+  }
 
   return (
     <Container>
