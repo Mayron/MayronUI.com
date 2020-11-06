@@ -7,7 +7,6 @@ import ContentfulArticle from "../components/blog/contentful-article";
 import BlogFooter from "../components/blog/blog-footer";
 import BlogHeader from "../components/blog/blog-header";
 import Section from "../styles/css/containers";
-import Excerpt from "../components/blog/excerpt";
 
 interface IBlogPostProps {
   pageContext: IBlogPost;
@@ -68,7 +67,6 @@ const BlogPost: React.FC<IBlogPostProps> = ({ pageContext }) => {
           `}
         >
           <BlogHeader title={title} timeToRead={timeToRead} createdAt={createdAt} />
-          <Excerpt>{excerpt}</Excerpt>
           {html && (
             <ContentfulArticle ref={bodyRef} dangerouslySetInnerHTML={{ __html: html }} />
           )}

@@ -6,15 +6,12 @@ import { RouteComponentProps } from "@reach/router";
 import colors from "../styles/colors";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import Img, { FixedObject } from "gatsby-image";
-import { formatStatistic } from "../utils/common";
 import Section from "../styles/css/containers";
 import vars from "../styles/variables";
 import media from "../styles/media";
-import styled from "@emotion/styled";
 
 interface IProjectCardProps {
   header: string;
-  downloads: number;
   background: FixedObject | FixedObject[];
   href: string;
   containImage?: boolean;
@@ -22,7 +19,6 @@ interface IProjectCardProps {
 
 const ProjectCard: React.FC<IProjectCardProps> = ({
   header,
-  downloads,
   background,
   children,
   href,
@@ -41,28 +37,24 @@ const ProjectCard: React.FC<IProjectCardProps> = ({
         css={css`
           text-decoration: none;
           display: block;
-          max-width: 241px;
+          width: 241px;
           color: ${colors.black};
+          background-color: ${colors.white};
+          border: 1px solid ${colors.grey.uiBorder};
+          border-radius: 4px;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          min-height: 292px;
 
           ${media.down("sm")`
-            max-width: none;
+            width: auto;
           `};
 
           &:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
             img {
               filter: brightness(1.25);
             }
-
-            article {
-              box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            }
-          }
-
-          article {
-            background-color: ${colors.white};
-            border: 1px solid ${colors.grey.uiBorder};
-            border-radius: 4px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
           }
 
           header {
@@ -104,24 +96,21 @@ const ProjectCard: React.FC<IProjectCardProps> = ({
           }
         `}
       >
-        <article>
-          <Img
-            fixed={background}
-            draggable={false}
-            style={{ width: "100%", height: 134 }}
-            imgStyle={containImage ? { objectFit: "contain" } : undefined}
-            css={css`
-              border-top-left-radius: 4px;
-              border-top-right-radius: 4px;
-            `}
-          />
+        <Img
+          fixed={background}
+          draggable={false}
+          style={{ width: "100%", height: 134 }}
+          imgStyle={containImage ? { objectFit: "contain" } : undefined}
+          css={css`
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+          `}
+        />
 
-          <header>
-            <h4>{header}</h4>
-            <p>{children}</p>
-            <span>{formatStatistic(downloads)} downloads</span>
-          </header>
-        </article>
+        <header>
+          <h4>{header}</h4>
+          <p>{children}</p>
+        </header>
       </Link>
     </li>
   );
@@ -174,14 +163,9 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           <h1 css={downloadsSubHeader}>Featured Downloads</h1>
         </header>
         <ul>
-          <ProjectCard
-            header="MayronUI"
-            href="/p/mayronui"
-            downloads={256000}
-            background={sources}
-          >
-            This is some text describing the project in the neatest way possible.
-            Hopefully the box is big enough!
+          <ProjectCard header="MayronUI" href="/p/mayronui" background={sources}>
+            The full UI pack for MayronUI includes the core MUI addons, plus several other
+            third-party addons to deliver the optimal WoW experience.
           </ProjectCard>
         </ul>
       </Section>
@@ -203,23 +187,20 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           <ProjectCard
             header="LibMayronObjects"
             href="/p/lib-mayron-objects"
-            downloads={256000}
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            This is some text describing the project in the neatest way possible.
-            Hopefully the box is big enough!
+            A framework to make object-oriented programming (OOP) easier for Lua
+            developers and WoW addon development.
           </ProjectCard>
 
           <ProjectCard
             header="LibMayronDB"
             href="/p/lib-mayron-db"
-            downloads={256000}
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            This is some text describing the project in the neatest way possible.
-            Hopefully the box is big enough!
+            A lightweight, feature rich embedded addon database for WoW addon development.
           </ProjectCard>
         </ul>
       </Section>
