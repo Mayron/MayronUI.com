@@ -30,7 +30,7 @@ const vars = {
   maxContentWidth: "1400px",
   // Used for the spacing around the edges of a page
   pageGutterSpacing: "30px",
-  pageGutterSpacingMobile: "10px",
+  pageGutterSpacingMobile: "15px",
   // Used for large spacing between section
   sectionSpacing: "30px",
   sectionSpacingMobile: "15px",

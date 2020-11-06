@@ -11,6 +11,7 @@ import {
   faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
 import media from "../../../styles/media";
+import GaLink from "../../widgets/ga-link";
 
 interface ISocialMediaIconsProps {
   includePatreon?: boolean;
@@ -57,34 +58,70 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
       `}
     >
       <li>
-        <FontAwesomeIcon title="YouTube" size="2x" color="#fe0000" icon={faYoutube} />
+        <GaLink
+          href="https://www.youtube.com/channel/UCCu-NuBYVi7yokZmKBCBvHw"
+          ga={{ action: "BannerSocialIcon", label: "YouTube" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="YouTube" size="2x" color="#fe0000" icon={faYoutube} />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon title="Twitch" size="2x" color="#864dee" icon={faTwitch} />
+        <GaLink
+          href="https://www.twitch.tv/mayronwow"
+          ga={{ action: "BannerSocialIcon", label: "Twitch" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="Twitch" size="2x" color="#864dee" icon={faTwitch} />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon
-          title="Twitter"
-          size="2x"
-          color="#28a9e0"
-          icon={faTwitterSquare}
-        />
+        <GaLink
+          href="https://twitter.com/MayronWoW"
+          ga={{ action: "BannerSocialIcon", label: "Twitter" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            title="Twitter"
+            size="2x"
+            color="#28a9e0"
+            icon={faTwitterSquare}
+          />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon
-          title="Discord"
-          size="2x"
-          color="#7389dc"
-          icon={faDiscord}
-          className="discord-icon"
-        />
+        <GaLink
+          href="https://discord.gg/8Kh3maU"
+          ga={{ action: "BannerSocialIcon", label: "Discord" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            title="Discord"
+            size="2x"
+            color="#7389dc"
+            icon={faDiscord}
+            className="discord-icon"
+          />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon title="GitHub" size="2x" color="white" icon={faGithubSquare} />
+        <GaLink
+          href="https://github.com/Mayron/MayronUI-Official"
+          ga={{ action: "BannerSocialIcon", label: "GitHub" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="GitHub" size="2x" color="white" icon={faGithubSquare} />
+        </GaLink>
       </li>
       {includePatreon && (
         <li>
-          <FontAwesomeIcon title="Patreon" size="2x" color="#ff424d" icon={faPatreon} />
+          <GaLink
+            href="https://www.patreon.com/mayronWoW"
+            ga={{ action: "BannerSocialIcon", label: "Patreon" }}
+            target="_blank"
+          >
+            <FontAwesomeIcon title="Patreon" size="2x" color="#ff424d" icon={faPatreon} />
+          </GaLink>
         </li>
       )}
     </ul>

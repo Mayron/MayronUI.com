@@ -20,18 +20,23 @@ const Introduction: React.FC = () => {
         <header
           css={css`
             h2 {
-              padding: 0 150px;
+              max-width: 600px;
+              margin: 0 auto;
+              padding-bottom: 40px;
             }
 
             p {
+              max-width: 700px;
+              margin: 0 auto;
               text-align: center;
-              margin-bottom: 15px;
-              padding: 0 100px;
+              padding-bottom: 15px;
             }
 
             ${media.down("sm")`
-              h2, p {
-                padding: 0;
+
+              h2 {
+                font-size: 1.65rem;
+                padding-bottom: 20px;
               }
             `};
           `}
@@ -53,18 +58,19 @@ const Introduction: React.FC = () => {
 
               ${media.down("xs")`
                 width: 100%;
+                padding-inline-start: 30px;
+                font-size: 1rem;
 
                 li {
-                  text-align: center;
                   padding-bottom: 10px;
                 }
               `};
             `}
           >
-            <li>Blazingly fast and lightweight for maximum performance</li>
-            <li>Suitable for all classes, specs, roles and screen resolutions</li>
-            <li>Highly customizable to suit all needs</li>
-            <li>Modular design with support for additional plugins</li>
+            <li>Blazingly fast and lightweight for maximum performance.</li>
+            <li>Suitable for all classes, specs, roles and screen resolutions.</li>
+            <li>Highly customizable to suit all needs.</li>
+            <li>Modular design with support for additional plugins.</li>
           </BulletPoints>
         </header>
       </Fade>
@@ -84,9 +90,11 @@ const Introduction: React.FC = () => {
 
           ${media.down("md")`
             height: auto;
+            margin-top: 10px;
 
             img {
               width: 100%;
+              max-width: 720px;
             }
           `};
         `}

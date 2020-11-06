@@ -48,8 +48,12 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
         header="LibMayronObjects"
         description="A framework to make object-oriented programming (OOP) easier for Lua developers and World of Warcraft addOn development."
       >
-        <BlizzardButton text="Download for Retail" />
-        <BlizzardButton text="Download for Classic" />
+        <BlizzardButton
+          text="Download"
+          href="https://www.wowinterface.com/downloads/info24450-LibMayronObjects.html"
+          ga={{ action: "LibMayronObjects", label: "Download" }}
+        />
+        {/* <BlizzardButton text="Download for Classic" /> */}
       </DownloadPageIntro>
 
       <PageContent>

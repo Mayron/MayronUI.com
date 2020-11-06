@@ -93,42 +93,29 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
         position: relative;
         z-index: 10;
         overflow: hidden;
+        padding-top: 30px;
 
         &::before {
           content: " ";
           position: absolute;
           display: block;
           width: 3000px;
-          height: 330px;
+          height: 420px;
           background-color: ${colors.blue.dark};
           transform: rotate(6deg);
           left: -100px;
           top: -130px;
 
-          ${media.down("xl")`
-            height: 380px;
+          ${media.down("xxl")`
+            height: 480px;
+          `};
+
+          ${media.down("lg")`
+            height: 520px;
           `};
 
           ${media.down("md")`
-            height: 500px;
-          `};
-        }
-
-        h2 {
-          color: ${colors.white};
-          text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-          text-align: right;
-          margin-bottom: 10px;
-          margin-right: 57px;
-          width: 340px;
-          min-width: 340px;
-
-          ${media.down("md")`
-            text-align: center;
-            margin-top: 30px;
-            margin-right: 0;
-            width: 100%;
-            max-width: 400px;
+            height: 625px;
           `};
         }
 
@@ -155,10 +142,51 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             ${media.down("md")`
               padding-left: 0;
               justify-content: center;
+              width: 100%;
+              margin-left: 0;
             `};
           `}
         >
-          <h2>{header}</h2>
+          <header
+            css={css`
+              color: ${colors.white};
+              text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+              text-align: right;
+              margin-bottom: 10px;
+              margin-right: 30px;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 700px;
+              min-width: 700px;
+
+              h2 {
+                text-align: right;
+                margin-bottom: 20px;
+              }
+
+              ${media.down("md")`
+                text-align: center;
+                align-items: center;
+                margin-right: 0;
+                width: 100%;
+                max-width: 400px;
+                min-width: 100%;
+
+                h2 {
+                  text-align: center;
+                }
+              `};
+            `}
+          >
+            <h2>{header}</h2>
+            <p>
+              By default, the chat frame appears in the top left corner of the screen.
+              However, the UI supports chat artwork for each corner of the screen in case
+              you want to have it in the traditional bottom left corner or wish to
+              experiment with further customisations.
+            </p>
+          </header>
 
           <div
             css={css`
