@@ -10,6 +10,7 @@ import {
   faTwitch,
   faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
+import GaLink from "../widgets/ga-link";
 
 const darkGrey = "#757575";
 
@@ -31,29 +32,65 @@ const BlogSocialMediaIcons: React.FC = () => {
       `}
     >
       <li>
-        <FontAwesomeIcon title="YouTube" size="2x" color={darkGrey} icon={faYoutube} />
+        <GaLink
+          href="https://www.youtube.com/channel/UCCu-NuBYVi7yokZmKBCBvHw"
+          ga={{ action: "BlogSocialIcon", label: "YouTube" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="YouTube" size="2x" color={darkGrey} icon={faYoutube} />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon title="Twitch" size="2x" color={darkGrey} icon={faTwitch} />
+        <GaLink
+          href="https://www.twitch.tv/mayronwow"
+          ga={{ action: "BlogSocialIcon", label: "Twitch" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="Twitch" size="2x" color={darkGrey} icon={faTwitch} />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon title="Twitter" size="2x" color={darkGrey} icon={faTwitter} />
+        <GaLink
+          href="https://twitter.com/MayronWoW"
+          ga={{ action: "BlogSocialIcon", label: "Twitter" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="Twitter" size="2x" color={darkGrey} icon={faTwitter} />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon
-          title="Discord"
-          size="2x"
-          color={darkGrey}
-          icon={faDiscord}
-          className="discord-icon"
-        />
+        <GaLink
+          href="https://discord.gg/8Kh3maU"
+          ga={{ action: "BlogSocialIcon", label: "Discord" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            title="Discord"
+            size="2x"
+            color={darkGrey}
+            icon={faDiscord}
+            className="discord-icon"
+          />
+        </GaLink>
       </li>
       <li>
-        <FontAwesomeIcon title="GitHub" size="2x" color={darkGrey} icon={faGithub} />
+        <GaLink
+          href="https://github.com/Mayron/MayronUI-Official"
+          ga={{ action: "BlogSocialIcon", label: "GitHub" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="GitHub" size="2x" color={darkGrey} icon={faGithub} />
+        </GaLink>
       </li>
 
       <li>
-        <FontAwesomeIcon title="Patreon" size="2x" color={darkGrey} icon={faPatreon} />
+        <GaLink
+          href="https://www.patreon.com/mayronWoW"
+          ga={{ action: "BlogSocialIcon", label: "Patreon" }}
+          target="_blank"
+        >
+          <FontAwesomeIcon title="Patreon" size="2x" color={darkGrey} icon={faPatreon} />
+        </GaLink>
       </li>
     </ul>
   );

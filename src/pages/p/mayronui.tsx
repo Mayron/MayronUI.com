@@ -13,6 +13,7 @@ import DownloadPageIntro from "../../components/download-page/download-page-intr
 import { graphql, useStaticQuery } from "gatsby";
 import Button from "../../components/widgets/button";
 import BackButton from "../../components/common/back-button";
+import media from "../../styles/media";
 
 const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   const [selectedStep, setSelectedStep] = useState(1);
@@ -51,6 +52,11 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
               flex-direction: column;
               align-items: flex-end;
               padding-right: 150px;
+
+              ${media.down("sm")`
+                align-items: center;
+                padding-right: 30px;
+              `};
             `,
           ]}
         >
