@@ -43,7 +43,7 @@ export const OptionBullet = styled.li`
   height: 40px;
   border-radius: 40px;
   background-color: ${colors.link.active};
-  margin: 0 15px;
+  margin: 0 10px;
   text-align: center;
   line-height: 40px;
   font-weight: 500;

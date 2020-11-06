@@ -11,7 +11,6 @@ interface IDownloadPageIntroProps {
 }
 
 const Description = styled.p`
-  font-size: ${vars.smallFontSize};
   font-weight: ${vars.robotoFontWeightMedium};
 `;
 
@@ -56,7 +55,7 @@ const DownloadPageIntro: React.FC<IDownloadPageIntroProps> = ({
       ]}
     >
       <Header>
-        <h1 css={css``}>{header}</h1>
+        <h1>{header}</h1>
         <Description>{description}</Description>
       </Header>
       <Options>{children}</Options>

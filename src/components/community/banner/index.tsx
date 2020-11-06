@@ -3,14 +3,21 @@ import { jsx, css } from "@emotion/core";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
-import BannerHeader from "./banner-header";
+import CommunityBannerContent from "./community-banner-content";
 
 const Banner: React.FC = () => {
-  const data: IImageSharpProps = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "community.png" }) {
+      desktop: file(relativePath: { eq: "community.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mobile: file(relativePath: { eq: "community-mobile.png" }) {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 512) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -18,36 +25,30 @@ const Banner: React.FC = () => {
     }
   `);
 
+  const sources = [
+    data.mobile.childImageSharp.fluid,
+    {
+      ...data.desktop.childImageSharp.fluid,
+      media: `(min-width: 576px)`,
+    },
+  ];
+
   return (
-    <div
-      role="banner"
-      css={css`
-        position: relative;
-        margin-top: 40px;
-        background-color: black;
-      `}
-    >
+    <React.Fragment>
       <Img
-        fluid={data.file.childImageSharp.fluid}
+        fluid={sources}
         draggable={false}
+        style={{ position: "absolute" }}
         css={css`
-          height: calc(100vh - 40px) !important;
-        `}
-      />
-      <div
-        css={css`
-          position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
-          display: flex;
-          align-items: center;
+          background-color: black;
         `}
-      >
-        <BannerHeader />
-      </div>
-    </div>
+      />
+      <CommunityBannerContent />
+    </React.Fragment>
   );
 };
 

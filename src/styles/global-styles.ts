@@ -15,6 +15,10 @@ const globalStyles = css`
     line-height: 140%;
   }
 
+  main {
+    position: relative;
+  }
+
   body,
   button,
   input,

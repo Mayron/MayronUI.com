@@ -3,7 +3,7 @@ import { jsx, css } from "@emotion/core";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
-import BannerHeader from "./banner-header";
+import HomePageBanner from "./home-page-banner";
 import { overlayCss } from "../../../styles/css/containers";
 import Particles from "react-particles-js";
 import colors from "../../../styles/colors";
@@ -150,7 +150,7 @@ const Banner: React.FC = () => {
           `,
         ]}
       >
-        <BannerHeader />
+        <HomePageBanner />
       </div>
     </div>
   );

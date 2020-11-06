@@ -33,6 +33,11 @@ const Introduction: React.FC = () => {
               h2, p {
                 padding: 0;
               }
+
+              h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+              }
             `};
           `}
         >
@@ -53,18 +58,19 @@ const Introduction: React.FC = () => {
 
               ${media.down("xs")`
                 width: 100%;
+                padding-inline-start: 30px;
+                font-size: 1rem;
 
                 li {
-                  text-align: center;
                   padding-bottom: 10px;
                 }
               `};
             `}
           >
-            <li>Blazingly fast and lightweight for maximum performance</li>
-            <li>Suitable for all classes, specs, roles and screen resolutions</li>
-            <li>Highly customizable to suit all needs</li>
-            <li>Modular design with support for additional plugins</li>
+            <li>Blazingly fast and lightweight for maximum performance.</li>
+            <li>Suitable for all classes, specs, roles and screen resolutions.</li>
+            <li>Highly customizable to suit all needs.</li>
+            <li>Modular design with support for additional plugins.</li>
           </BulletPoints>
         </header>
       </Fade>

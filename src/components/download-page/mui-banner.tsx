@@ -8,7 +8,7 @@ import colors from "../../styles/colors";
 import { overlayCss } from "../../styles/css/containers";
 
 const MuiBanner: React.FC = ({ children }) => {
-  const data: IImageSharpProps = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "mui-banner.jpg" }) {
         childImageSharp {

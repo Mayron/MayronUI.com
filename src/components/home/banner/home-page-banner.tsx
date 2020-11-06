@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import styled from "@emotion/styled";
 import { faPatreon } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -11,7 +12,7 @@ import vars from "../../../styles/variables";
 import Button from "../../widgets/button";
 import SocialMediaIcons from "./social-media-icons";
 
-const BannerHeader: React.FC = () => {
+const HomePageBanner: React.FC = () => {
   return (
     <div
       css={[
@@ -24,43 +25,10 @@ const BannerHeader: React.FC = () => {
         `,
       ]}
     >
-      <header
-        css={css`
-          h1 {
-            color: ${colors.white};
-            text-align: left;
-            font-size: 4rem;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-          }
-
-          p {
-            color: ${colors.white};
-            font-size: ${vars.largeFontSize};
-            width: 540px;
-            border-top: 1px solid ${colors.white};
-            padding: 10px 0;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-          }
-
-          ${media.down("xs")`
-            margin: 0 20px;
-
-            h1 {
-              font-size: 3rem;
-              text-align: center;
-            }
-
-            p {
-              width: 100%;
-              text-align: center;
-            }      
-          `};
-        `}
-      >
+      <BannerHeader>
         <h1>MayronUI</h1>
         <p>A minimalistic, Graphical, World of Warcraft UI Replacement Package</p>
-      </header>
+      </BannerHeader>
       <footer
         css={[
           css`
@@ -110,6 +78,8 @@ const BannerHeader: React.FC = () => {
 
               svg {
                 margin-right: 10px;
+                max-width: 20px;
+                max-height: 20px;
               }
 
               &:hover {
@@ -134,4 +104,37 @@ const BannerHeader: React.FC = () => {
   );
 };
 
-export default BannerHeader;
+export default HomePageBanner;
+
+const BannerHeader = styled.header`
+  h1 {
+    color: ${colors.white};
+    text-align: left;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    color: ${colors.white};
+    font-size: ${vars.largeFontSize};
+    width: 540px;
+    border-top: 1px solid ${colors.white};
+    padding: 10px 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ${media.down("xs")`
+    margin: 0 20px;
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+    }      
+  `};
+`;
