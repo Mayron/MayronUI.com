@@ -68,9 +68,7 @@ export const OptionsNavBar = styled.nav`
     padding: 0;
     width: 100%;
     justify-content: space-evenly;
-    border-bottom: 2px solid ${colors.blue.faint};
-    padding-bottom: ${vars.largeSectionSpacing};
-    margin: 0 20px;
+    padding-bottom: 40px;
   `};
 `;
 
@@ -134,13 +132,17 @@ export const SlideDetailsContainer = styled.div`
   flex-direction: column;
   padding-bottom: 40px;
 
-  ${media.up("lg")`
-    p {
+  p {
+    ${media.up("lg")`
       border-left: 3px solid ${colors.blue.faint};
       margin-left: -22px;
       padding-left: 15px;
-    }
+    `};
+
+    ${media.up("xl")`
+      margin-top: 80px;
   `};
+  }
 
   ${media.down("md")`
     h3, p {
@@ -194,24 +196,30 @@ export const arrowCss = css`
 export const ScreenShotsContainer = styled.div`
   position: relative;
   overflow: hidden;
+  z-index: 10;
+  padding-top: 50px;
 
   &::before {
     content: " ";
     position: absolute;
     display: block;
     width: 3000px;
-    height: 280px;
+    height: 400px;
     background-color: ${colors.blue.dark};
     transform: rotate(-5deg);
     left: -100px;
     top: -130px;
 
-    ${media.down("xl")`
-      height: 240px;
+    ${media.down("lg")`
+      height: 300px;
     `};
 
-    ${media.down("xs")`
-      height: 190px;
+    ${media.down("md")`
+      height: 400px;
+    `};
+
+    ${media.down("sm")`
+      height: 240px;
     `};
   }
 

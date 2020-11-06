@@ -22,18 +22,18 @@ const Footer: React.FC = () => {
 
         ${gaCategory === "Home" &&
         css`
-          padding-top: 140px;
+          padding-top: 98px;
 
           &::before {
             content: " ";
             position: absolute;
             display: block;
             width: 3000px;
-            height: 150px;
+            height: 120px;
             background-color: ${colors.blue.dark};
-            transform: rotate(3deg);
+            transform: rotate(-2deg);
             left: -100px;
-            top: 75px;
+            top: 20px;
             z-index: -10;
           }
 
@@ -41,7 +41,13 @@ const Footer: React.FC = () => {
             padding-top: 50px;
 
             &::before {
-              height: 80px;   
+              top: -30px; 
+            }
+          `};
+
+          ${media.down("lg")`
+            &::before {
+              top: -20px; 
             }
           `};
         `}
