@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx, SerializedStyles } from "@emotion/core";
 import { Link } from "gatsby";
-import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 import React, { useContext } from "react";
 import buttons, { ButtonType } from "../../styles/css/buttons";
+import { sendGtagEvent } from "../../utils/common";
 import { LayoutContext } from "../layout";
 
 interface IButtonProps {
@@ -35,12 +35,7 @@ const Button: React.FC<IButtonProps> = ({
     onClick && onClick();
 
     if (ga) {
-      trackCustomEvent({
-        category: gaCategory,
-        action: ga.action,
-        label: ga.label,
-        value: ga.value,
-      });
+      sendGtagEvent(gaCategory, ga.action, ga.label, ga.value);
     }
   };
 

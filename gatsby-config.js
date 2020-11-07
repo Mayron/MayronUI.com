@@ -19,15 +19,19 @@ var plugins = [
     },
   },
   {
-    resolve: `gatsby-plugin-google-analytics`,
+    resolve: `gatsby-plugin-google-gtag`,
     options: {
-      trackingId: process.env.GA_TRACKING_ID,
-      // Defines where to place the tracking script - `true` in the head and `false` in the body
-      head: true,
-      // Setting this parameter is optional
-      anonymize: true,
-      // Setting this parameter is also optional
-      respectDNT: true,
+      // You can add multiple tracking ids and a pageview event will be fired for all of them.
+      trackingIds: [
+        process.env.GA_TRACKING_ID, // Google Analytics / GA
+      ],
+      // This object is used for configuration specific to this plugin
+      pluginConfig: {
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
     },
   },
   {

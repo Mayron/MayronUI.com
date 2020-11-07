@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 import React, { useContext } from "react";
 import colors from "../../styles/colors";
+import { sendGtagEvent } from "../../utils/common";
 import { LayoutContext } from "../layout";
 
 interface IBlizzardButtonProps {
@@ -15,12 +15,7 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga }) => {
   const { gaCategory } = useContext(LayoutContext);
 
   const handleOnClick = () => {
-    trackCustomEvent({
-      category: gaCategory,
-      action: ga.action,
-      label: ga.label,
-      value: ga.value,
-    });
+    sendGtagEvent(gaCategory, ga.action, ga.label, ga.value);
   };
 
   return (
