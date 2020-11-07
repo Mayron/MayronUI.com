@@ -10,11 +10,9 @@ import {
   faTwitch,
   faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
-<<<<<<< Updated upstream
-=======
+
 import GaLink from "../widgets/ga-link";
 import media from "../../styles/media";
->>>>>>> Stashed changes
 
 const darkGrey = "#757575";
 

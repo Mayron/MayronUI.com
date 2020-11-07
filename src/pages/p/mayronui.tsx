@@ -13,6 +13,7 @@ import DownloadPageIntro from "../../components/download-page/download-page-intr
 import { graphql, useStaticQuery } from "gatsby";
 import Button from "../../components/widgets/button";
 import BackButton from "../../components/common/back-button";
+import media from "../../styles/media";
 
 const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   const [selectedStep, setSelectedStep] = useState(1);
@@ -51,11 +52,24 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
               flex-direction: column;
               align-items: flex-end;
               padding-right: 150px;
+
+              ${media.down("sm")`
+                align-items: center;
+                padding-right: 30px;
+              `};
             `,
           ]}
         >
-          <BlizzardButton text="Download for Retail" />
-          <BlizzardButton text="Download for Classic" />
+          <BlizzardButton
+            text="Download for Retail"
+            href="https://www.wowinterface.com/downloads/info21221-MayronUIGen6.html"
+            ga={{ action: "MayronUI", label: "DownloadRetail" }}
+          />
+          <BlizzardButton
+            text="Download for Classic"
+            href="https://www.wowinterface.com/downloads/fileinfo.php?id=25225"
+            ga={{ action: "MayronUI", label: "DownloadClassic" }}
+          />
         </div>
       </MuiBanner>
 

@@ -22,11 +22,8 @@ const Footer: React.FC = () => {
 
         ${gaCategory === "Home" &&
         css`
-<<<<<<< Updated upstream
           padding-top: 140px;
-=======
           padding-top: 105px;
->>>>>>> Stashed changes
 
           &::before {
             content: " ";
@@ -37,19 +34,13 @@ const Footer: React.FC = () => {
             background-color: ${colors.blue.dark};
             transform: rotate(3deg);
             left: -100px;
-<<<<<<< Updated upstream
-            top: 75px;
-=======
             top: 45px;
->>>>>>> Stashed changes
             z-index: -10;
           }
 
           ${media.down("lg")`
             &::before {
-<<<<<<< Updated upstream
-              height: 80px;   
-=======
+              height: 80px;
               top: 20px; 
             }
           `};
@@ -59,7 +50,6 @@ const Footer: React.FC = () => {
 
             &::before {
               top: -30px; 
->>>>>>> Stashed changes
             }
           `};
         `}

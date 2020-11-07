@@ -56,7 +56,8 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
                 }
 
                 img {
-                  margin: 10px;
+                  max-width: 600px;
+                  margin: 10px auto;
                   width: calc(100% - 20px);
                 }
               `};
@@ -70,6 +71,7 @@ const ConfigMenu: React.FC<IConfigMenuProps> = ({ header, children }) => {
                 border-radius: ${vars.borderRadius};
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
                 width: 100%;
+                margin-left: 30px;
               `}
             />
           </div>

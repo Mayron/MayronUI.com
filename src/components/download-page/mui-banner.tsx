@@ -8,17 +8,32 @@ import colors from "../../styles/colors";
 import { overlayCss } from "../../styles/css/containers";
 
 const MuiBanner: React.FC = ({ children }) => {
-  const data: IImageSharpProps = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "mui-banner.jpg" }) {
+      desktop: file(relativePath: { eq: "mui-banner.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid
           }
         }
       }
+      mobile: file(relativePath: { eq: "mui-banner-mobile.jpg" }) {
+        childImageSharp {
+          fluid(quality: 80, maxWidth: 768) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
+
+  const sources = [
+    data.mobile.childImageSharp.fluid,
+    {
+      ...data.desktop.childImageSharp.fluid,
+      media: `(min-width: 768px)`,
+    },
+  ];
 
   return (
     <div
@@ -28,10 +43,14 @@ const MuiBanner: React.FC = ({ children }) => {
       `}
     >
       <Img
-        fluid={data.file.childImageSharp.fluid}
+        fluid={sources}
         draggable={false}
         css={css`
           height: 500px;
+
+          @media (max-width: 768px) {
+            height: 200px;
+          }
         `}
       />
       <Particles

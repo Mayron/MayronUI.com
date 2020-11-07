@@ -1,16 +1,34 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+import { trackCustomEvent } from "gatsby-plugin-google-analytics";
+import React, { useContext } from "react";
 import colors from "../../styles/colors";
+import { LayoutContext } from "../layout";
 
 interface IBlizzardButtonProps {
   text: string;
+  href: string;
+  ga: { action: string; label?: string; value?: number };
 }
 
-const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text }) => {
+const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga }) => {
+  const { gaCategory } = useContext(LayoutContext);
+
+  const handleOnClick = () => {
+    trackCustomEvent({
+      category: gaCategory,
+      action: ga.action,
+      label: ga.label,
+      value: ga.value,
+    });
+  };
+
   return (
-    <button
-      type="button"
+    <a
+      onClick={handleOnClick}
+      href={href}
+      rel="noopener noreferrer"
+      target="_blank"
       css={css`
         border: none;
         outline: none;
@@ -19,6 +37,10 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text }) => {
         width: 238px;
         height: 64px;
         margin: 5px 0;
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
 
         img {
           position: absolute;
@@ -83,7 +105,7 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text }) => {
       <img src="/images/bliz-btn-hover.png" alt="download" className="bliz-hover" />
       <img src="/images/bliz-btn.png" alt="download" className="bliz-normal" />
       <span>{text}</span>
-    </button>
+    </a>
   );
 };
 

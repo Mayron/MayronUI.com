@@ -11,6 +11,14 @@ const PageContent = styled.div`
   display: flex;
   align-items: flex-start;
   max-width: 1000px;
+  width: 100%;
+
+  @media (max-width: 1010px) {
+    section,
+    article {
+      width: 100%;
+    }
+  }
 `;
 
 export default PageContent;

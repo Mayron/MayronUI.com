@@ -7,6 +7,7 @@ import Section, { BlueContainer } from "../../styles/css/containers";
 import Img from "gatsby-image";
 import vars from "../../styles/variables";
 import media from "../../styles/media";
+import colors from "../../styles/colors";
 
 interface ITimerBarsProps {
   header: string;
@@ -30,6 +31,19 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
       css={css`
         position: relative;
         z-index: 10;
+        overflow: hidden;
+
+        &::before {
+          content: " ";
+          position: absolute;
+          display: block;
+          width: 3000px;
+          height: 190px;
+          background-color: ${colors.white};
+          transform: rotate(3deg);
+          left: -100px;
+          top: -105px;
+        }
       `}
     >
       <Fade triggerOnce>
@@ -39,6 +53,7 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
           css={css`
             display: flex;
             padding-bottom: 0;
+            padding-top: 80px;
 
             & > * {
               flex: 1;
@@ -62,11 +77,11 @@ const TimerBars: React.FC<ITimerBarsProps> = ({ header }) => {
               }
             }
 
-            ${media.up("md")`
+            ${media.down("lg")`
               padding-top: 50px;
             `};
 
-            ${media.down("sm")`
+            ${media.down("md")`
               flex-direction: column;
               padding-bottom: 0;
 

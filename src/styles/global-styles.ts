@@ -2,7 +2,6 @@ import vars from "./variables";
 import colors from "./colors";
 import { css } from "@emotion/core";
 import media from "./media";
-import { customScrollBar } from "./css/misc";
 import fonts from "./fonts";
 
 const globalStyles = css`
@@ -13,6 +12,12 @@ const globalStyles = css`
     padding: 0;
     box-sizing: border-box;
     line-height: 140%;
+  }
+
+  main {
+    position: relative;
+    max-width: 2560px;
+    margin: 0 auto;
   }
 
   body,
@@ -133,7 +138,35 @@ const globalStyles = css`
     font-size: ${vars.smallFontSize} !important;
   }
 
-  ${customScrollBar};
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: none;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: none;
+    border: none;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: ${colors.link.default};
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: ${colors.link.hover};
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: ${colors.link.active};
+  }
 `;
 
 export default globalStyles;

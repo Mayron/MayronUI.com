@@ -14,6 +14,7 @@ const IndexPage: React.FC<RouteComponentProps> = () => {
     <Layout gaCategory="Home">
       <Banner />
       <Introduction />
+      <ScreenShots />
       <TimerBars header="Track Important Auras" />
       <BottomLeftChatFrame header="Customisable Chat Artwork" />
       <ConfigMenu header="Advanced Configuration Menu">
@@ -33,7 +34,7 @@ const IndexPage: React.FC<RouteComponentProps> = () => {
           leaks.
         </li>
       </ConfigMenu>
-      <ScreenShots />
+
       <ReadyToGetStarted />
     </Layout>
   );

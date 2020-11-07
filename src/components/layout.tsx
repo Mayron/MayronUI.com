@@ -59,24 +59,13 @@ const Layout: React.FC<ILayoutProps> = ({
   }, [isCollapsed]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          observer.unobserve(entry.target);
-          entry.target.classList.remove("c-vis");
-        }
-      });
-    });
-
-    document.querySelectorAll(".c-vis").forEach((v) => observer.observe(v));
-
-    if (title !== "Home") {
+    if (gaCategory !== "Home") {
       window.removeEventListener("scroll", scroller);
       document.body.classList.add("shrink");
     } else {
       window.addEventListener("scroll", scroller);
     }
-  }, [title]);
+  }, [gaCategory]);
 
   return (
     <React.Fragment>
