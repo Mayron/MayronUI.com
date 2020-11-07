@@ -30,7 +30,7 @@ const TopNavBar: React.FC<ITopNavBarProps> = ({ onBurgerMenuClick }) => {
     <Styles.NavBarWrapper onMouseLeave={() => setMobileMenuShown(false)}>
       <Styles.NavBarContainer>
         <Link to="/">
-          <Styles.Logo alt="logo" src="/images/logo.png" draggable={false} />
+          <Styles.Logo alt="logo" src="/images/navbar-logo.png" draggable={false} />
         </Link>
         {mobile ? (
           <Styles.BurgerButton onClick={() => setMobileMenuShown(!mobileMenuShown)}>
