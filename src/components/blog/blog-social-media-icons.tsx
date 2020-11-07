@@ -10,6 +10,11 @@ import {
   faTwitch,
   faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
+<<<<<<< Updated upstream
+=======
+import GaLink from "../widgets/ga-link";
+import media from "../../styles/media";
+>>>>>>> Stashed changes
 
 const darkGrey = "#757575";
 
@@ -20,6 +25,11 @@ const BlogSocialMediaIcons: React.FC = () => {
         margin-left: auto;
         align-self: flex-end;
         display: flex;
+
+        ${media.down("xs")`
+          flex: 100%;
+          margin-top: 10px;
+        `};
 
         li {
           padding: 0 6px;

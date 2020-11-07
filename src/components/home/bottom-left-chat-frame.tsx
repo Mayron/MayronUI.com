@@ -130,6 +130,10 @@ const BottomLeftChatFrame: React.FC<IBottomLeftChatFrameProps> = ({ header }) =>
             width: 100%;
             max-width: 400px;
           `};
+
+          ${media.down("xs")`
+            height: 725px;
+          `};
         }
 
         img {

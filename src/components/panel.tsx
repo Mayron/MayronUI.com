@@ -17,7 +17,7 @@ const Panel: React.FC<IPanelProps> = ({ header, children }) => {
         border-radius: ${vars.borderRadius};
         padding: 25px 20px;
         background-color: ${colors.white};
-        margin-bottom: ${vars.sectionSpacing};
+        margin-bottom: 15px;
       `}
     >
       <ContentfulArticle>

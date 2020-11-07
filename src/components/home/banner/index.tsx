@@ -144,7 +144,7 @@ const Banner: React.FC = () => {
             `};
 
             ${media.down("md")`
-              padding-bottom: 40px;
+              padding-bottom: 80px;
               padding-top: 40px;      
             `};
           `,

@@ -19,6 +19,7 @@ const BlogFooter: React.FC = () => {
       <div
         css={css`
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           margin-bottom: 40px;
         `}

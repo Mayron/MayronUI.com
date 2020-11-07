@@ -68,7 +68,7 @@ const PanelContainer = styled.article`
   padding: 25px 20px;
   width: ${vars.textContainerWidth};
   background-color: ${colors.white};
-  margin-bottom: ${vars.sectionSpacing};
+  margin-bottom: 15px;
 `;
 
 const PanelHeader = styled.header`

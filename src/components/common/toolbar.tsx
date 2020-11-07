@@ -2,6 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import React from "react";
 import { ShowOption, SortByOption } from "../../pages/blog";
+import media from "../../styles/media";
 import Filter from "../filter";
 import SearchBox from "./search-box";
 
@@ -25,11 +26,18 @@ const ToolBar: React.FC<IToolBarProps> = ({ onSearchChange, show, sortBy }) => {
         display: flex;
         justify-content: space-between;
         padding-bottom: 30px;
+
+        ${media.down("xs")`
+          flex-direction: column;
+        `};
       `}
     >
       <SearchBox placeholder="Search blog posts" onSearchChange={onSearchChange} />
       <div
         css={css`
+          display: flex;
+          justify-content: flex-end;
+
           & > :first-child {
             margin-right: 20px;
           }

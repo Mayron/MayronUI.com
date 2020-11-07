@@ -38,24 +38,9 @@ const TableOfContents: React.FC<ITableOfContentsProps> = ({
           </Step>
         ))}
       </TableOfContentsSteps>
-
-      <Footer>
-        <ul>
-          <li>250k downloads</li>
-          <li>Version 6.2.1</li>
-          <li>Last updated 23 hours ago</li>
-        </ul>
-      </Footer>
     </Container>
   );
 };
-
-const Footer = styled.footer`
-  margin-top: 15px;
-  padding-left: 10px;
-  font-size: 14px;
-  color: ${colors.text.secondary};
-`;
 
 const Container = styled.nav`
   width: 240px;

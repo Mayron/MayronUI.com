@@ -25,6 +25,7 @@ const BlogMetaData: React.FC<IBlogMetaDataProps> = ({
       css={css`
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         ${small
           ? css`

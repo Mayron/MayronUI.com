@@ -1,6 +1,7 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import colors from "../../styles/colors";
+import media from "../../styles/media";
 import vars from "../../styles/variables";
 
 const filterItemCss = css`
@@ -11,6 +12,10 @@ const filterItemCss = css`
   user-select: none;
   align-items: center;
   font-size: 0.8rem;
+
+  ${media.down("xs")`
+    font-size: 1rem;
+  `};
 `;
 
 export const FilterPopupTooltip = styled.span`
@@ -95,6 +100,10 @@ export const FilterListHeaderContainer = styled.header`
   display: flex;
   align-items: center;
   font-size: 0.8rem;
+
+  ${media.down("xs")`
+    font-size: 1rem;
+  `};
 
   span {
     color: $secondary-text-dark-grey;

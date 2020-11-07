@@ -4,6 +4,7 @@ import { jsx, css } from "@emotion/core";
 import { ReactComponent as SearchIcon } from "../../svgs/search.svg";
 import colors from "../../styles/colors";
 import vars from "../../styles/variables";
+import media from "../../styles/media";
 
 interface ISearchBoxProps {
   placeholder: string;
@@ -26,9 +27,18 @@ const SearchBox: React.FC<ISearchBoxProps> = ({ placeholder, onSearchChange }) =
         margin-right: 20px;
         flex: 1;
 
-        & + div {
-          display: flex;
+        svg {
+          margin: 5px 8px;
         }
+
+        ${media.down("xs")`
+          margin-right: 0;
+          margin-bottom: 15px;
+
+          input {
+            font-size: 1rem;
+          }
+        `};
 
         ${focused &&
         css`
@@ -36,12 +46,7 @@ const SearchBox: React.FC<ISearchBoxProps> = ({ placeholder, onSearchChange }) =
         `}
       `}
     >
-      <SearchIcon
-        title="search"
-        css={css`
-          margin: 5px 8px;
-        `}
-      />
+      <SearchIcon title="search" />
       <input
         type="search"
         css={css`
@@ -51,8 +56,8 @@ const SearchBox: React.FC<ISearchBoxProps> = ({ placeholder, onSearchChange }) =
           border: none;
           border-radius: 4px;
           padding-left: 0;
-          font-size: 0.8rem;
           width: 100%;
+          font-size: 0.8rem;
         `}
         placeholder={placeholder}
         onChange={onSearchChange}
