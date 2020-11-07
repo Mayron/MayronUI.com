@@ -102,6 +102,8 @@ const SEO: React.FC<ISEOProps> = ({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLinkedData) }}
       />
+
+      <script type="text/javascript" src="hotjar.js" />
     </Helmet>
   );
 };
