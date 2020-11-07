@@ -14,6 +14,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Button from "../../components/widgets/button";
 import BackButton from "../../components/common/back-button";
 import media from "../../styles/media";
+import { DownloadPageFooter } from "../../components/download-page/styles";
 
 const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   const [selectedStep, setSelectedStep] = useState(1);
@@ -83,17 +84,12 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
           {data.allContentfulProjectStep.edges.map((e, key) => (
             <StepPanel key={key} data={e.node} onInView={setSelectedStep} />
           ))}
-          <footer
-            css={css`
-              display: flex;
-              justify-content: space-between;
-            `}
-          >
+          <DownloadPageFooter>
             <BackButton href="/downloads" text="Back to Downloads" />
             <Button type="secondary" size="lg" onClick={() => window.scrollTo(0, 0)}>
               Go to top of page
             </Button>
-          </footer>
+          </DownloadPageFooter>
         </section>
         <TableOfContents
           selected={selectedStep}

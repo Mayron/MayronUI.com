@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             width: 3000px;
             height: 150px;
             background-color: ${colors.blue.dark};
-            transform: rotate(3deg);
+            transform: rotate(-2deg);
             left: -100px;
             top: 45px;
             z-index: -10;

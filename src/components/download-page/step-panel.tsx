@@ -8,6 +8,7 @@ import ContentfulArticle from "../blog/contentful-article";
 import Reveal from "react-awesome-reveal";
 import { InView } from "react-intersection-observer";
 import { getSlug } from "../../utils/common";
+import media from "../../styles/media";
 
 interface IPanelProps {
   data: IStep;
