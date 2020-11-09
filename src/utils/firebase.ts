@@ -14,8 +14,16 @@ const firebaseConfig = {
   measurementId: "G-GK2Q047SE5",
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-export const analytics = firebase.analytics();
+let instance: firebase.analytics.Analytics | undefined;
 
-export default firebase;
+const getFirebaseAnalytics: () => firebase.analytics.Analytics | undefined = () => {
+  if (typeof window !== "undefined") {
+    if (instance) return instance;
+    const app = firebase.initializeApp(firebaseConfig);
+    instance = app.analytics();
+  }
+
+  return instance;
+};
+
+export default getFirebaseAnalytics;
