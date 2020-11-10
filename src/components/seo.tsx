@@ -104,6 +104,10 @@ const SEO: React.FC<ISEOProps> = ({
       />
 
       <script type="text/javascript" src="hotjar.js" />
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+      <script type="text/javascript" src="firebase-analytics.js" />
     </Helmet>
   );
 };
