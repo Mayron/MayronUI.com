@@ -45,6 +45,14 @@ const Banner: React.FC = () => {
           bottom: 0;
           left: 0;
           background-color: black;
+
+          @media (min-width: 1601px) {
+            img {
+              max-width: 1600px;
+              left: 50% !important;
+              transform: translateX(-50%);
+            }
+          }
         `}
       />
       <CommunityBannerContent />

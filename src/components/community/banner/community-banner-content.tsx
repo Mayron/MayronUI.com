@@ -75,7 +75,7 @@ const BannerHeader = styled.header`
 const BannerTextContent = styled.div`
   margin-left: 40px;
   color: ${colors.white};
-  max-width: 550px;
+  max-width: 520px;
 
   p {
     margin-bottom: 15px;
