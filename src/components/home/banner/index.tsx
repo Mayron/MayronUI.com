@@ -77,6 +77,14 @@ const Banner: React.FC = () => {
               width: auto !important;
             }
           }
+
+          @media (min-height: 660px) and (max-width: 760px) and (min-width: 576px) {
+            img {
+              left: auto !important;
+              right: -400px !important;
+              width: auto !important;
+            }
+          }
         `}
       />
       <Particles
