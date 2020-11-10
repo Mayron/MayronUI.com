@@ -27,7 +27,7 @@ const HomePageBanner: React.FC = () => {
     >
       <BannerHeader>
         <h1>MayronUI</h1>
-        <p>A minimalistic, Graphical, World of Warcraft UI Replacement Package</p>
+        <p>A Minimalistic, Graphical, World of Warcraft UI Replacement Package</p>
       </BannerHeader>
       <footer
         css={[

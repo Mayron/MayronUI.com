@@ -64,18 +64,19 @@ const Banner: React.FC = () => {
         draggable={false}
         css={css`
           height: calc(100vh - 40px) !important;
+          max-height: 1080px;
 
           ${media.down("md")`
             max-height: 768px;
           `};
 
-          ${media.between("sm", "lg")`
+          @media (min-height: 1080px) and (max-width: 1200px) and (min-width: 576px) {
             img {
               left: auto !important;
               right: -400px !important;
               width: auto !important;
             }
-          `};
+          }
         `}
       />
       <Particles
