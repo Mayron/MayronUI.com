@@ -86,7 +86,21 @@ var plugins = [
   },
   // `gatsby-plugin-webpack-bundle-analyzer`,
   `gatsby-plugin-remove-trailing-slashes`,
-  `gatsby-transformer-remark`,
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: `gatsby-remark-highlight-code`,
+          options: {
+            terminal: `carbon`,
+            theme: `vscode`,
+            lineNumbers: true
+          }
+        },
+      ],
+    },
+  },
   {
     resolve: `gatsby-source-contentful`,
     options: {
@@ -102,7 +116,7 @@ module.exports = {
   siteMetadata: {
     title: `MayronUI`,
     siteUrl: "https://mayronui.com",
-    description: `MayronUI is a popular World of Warcraft UI replacement package backed with a growing and active community.`,
+    description: `MayronUI is a popular World of Warcraft UI replacement package backed by a growing and active community.`,
   },
   assetPrefix: `/assets/${Date.now().toString()}`,
   plugins: plugins,
