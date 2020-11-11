@@ -4,6 +4,8 @@ import { link } from "../../styles/css/text";
 import vars from "../../styles/variables";
 
 const ContentfulArticle = styled.article`
+  --deckgo-highlight-code-font-size: 0.9rem;
+
   /* h1 should not be allowed - only 1 h1 per page */
   h1 {
     display: none;
@@ -98,8 +100,13 @@ const ContentfulArticle = styled.article`
     }
 
     code {
+      font-size: 0.8rem;
       padding: 0;
     }
+  }
+
+  deckgo-highlight-code {
+    line-height: 1.25rem;
   }
 
   code {
@@ -107,6 +114,7 @@ const ContentfulArticle = styled.article`
     border-radius: 2px;
     padding: 2px 4px;
     font-size: 0.8rem;
+    line-height: 1rem;
   }
 
   ul {

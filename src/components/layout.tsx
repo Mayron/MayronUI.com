@@ -11,6 +11,9 @@ import Footer from "./footer";
 import styled from "@emotion/styled";
 import colors from "../styles/colors";
 
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
+
 interface IPageContentProps {
   backgroundColor: string;
 }
