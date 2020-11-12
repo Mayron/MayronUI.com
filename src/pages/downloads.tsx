@@ -202,6 +202,15 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           >
             A lightweight, feature rich embedded addon database for WoW addon development.
           </ProjectCard>
+
+          <ProjectCard
+            header="LibMayronEvents"
+            href="/p/lib-mayron-events"
+            containImage
+            background={data.misc.childImageSharp.fixed}
+          >
+            A simple event management library for WoW addon development.
+          </ProjectCard>
         </ul>
       </Section>
     </Layout>

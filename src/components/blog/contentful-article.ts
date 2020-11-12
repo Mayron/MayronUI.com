@@ -59,16 +59,17 @@ const ContentfulArticle = styled.article`
     color: ${colors.warning.text};
     margin-left: 20px;
     margin-right: 20px;
-    display: flex;
+    display: table;
 
     &:before {
       content: url("/images/warning.svg");
       width: 20px;
       height: 20px;
-      display: block;
+      display: table-cell;
       min-width: 20px;
-      margin-right: 10px;
-      margin-top: 5px;
+      padding-right: 10px;
+      position: relative;
+      top: 5px;
     }
   }
 
