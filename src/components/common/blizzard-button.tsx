@@ -9,9 +9,10 @@ interface IBlizzardButtonProps {
   text: string;
   href: string;
   ga: { action: string; label?: string; value?: number };
+  large?: boolean;
 }
 
-const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga }) => {
+const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga, large }) => {
   const { gaCategory } = useContext(LayoutContext);
 
   const handleOnClick = () => {
@@ -29,7 +30,6 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga }) => {
         outline: none;
         background: none;
         position: relative;
-        width: 238px;
         height: 64px;
         margin: 5px 0;
         display: flex;
@@ -37,7 +37,18 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga }) => {
         justify-content: center;
         align-items: center;
 
+        ${large
+          ? css`
+              width: 300px;
+              font-size: 0.9rem;
+            `
+          : css`
+              width: 238px;
+            `};
+
         img {
+          width: 100%;
+          height: 100%;
           position: absolute;
           top: 0;
           bottom: 0;

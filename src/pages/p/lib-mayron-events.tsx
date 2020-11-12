@@ -50,9 +50,16 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
         description="A lightweight event management library for World of Warcraft."
       >
         <BlizzardButton
-          text="Download"
+          large
+          text="Download from WoWInterface"
           href="https://www.curseforge.com/wow/addons/libmayronevents/files"
-          ga={{ action: "LibMayronEvents", label: "Download" }}
+          ga={{ action: "Download", label: "WoWInterface" }}
+        />
+        <BlizzardButton
+          large
+          text="Download from CurseForge"
+          href="https://www.curseforge.com/wow/addons/libmayronevents/files"
+          ga={{ action: "Download", label: "CurseForge" }}
         />
       </DownloadPageIntro>
 

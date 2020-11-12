@@ -19,22 +19,6 @@ var plugins = [
     },
   },
   {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      // You can add multiple tracking ids and a pageview event will be fired for all of them.
-      trackingIds: [
-        process.env.GA_TRACKING_ID, // Google Analytics / GA
-      ],
-      // This object is used for configuration specific to this plugin
-      pluginConfig: {
-        // Puts tracking script in the head instead of the body
-        head: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-      },
-    },
-  },
-  {
     resolve: "gatsby-plugin-asset-path",
     options: {
       fileTypes: ["js", "map", "css"],
@@ -75,7 +59,7 @@ var plugins = [
       resolveEnv: () => process.env.NODE_ENV,
       env: {
         development: {
-          policy: [{ userAgent: "*", disallow: ["/"] }],
+          policy: [{ userAgent: "*", allow: ["/"] }],
         },
         production: {
           policy: [{ userAgent: "*", allow: "/" }],
@@ -107,7 +91,7 @@ var plugins = [
       spaceId: `ul664i42lbhn`,
       // Learn about environment variables: https://gatsby.dev/env-vars
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      host: `preview.contentful.com`,
+      host: process.env.CONTENTFUL_HOST,
     },
   },
 ];
