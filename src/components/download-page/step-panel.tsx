@@ -8,7 +8,6 @@ import ContentfulArticle from "../blog/contentful-article";
 import Reveal from "react-awesome-reveal";
 import { InView } from "react-intersection-observer";
 import { getSlug } from "../../utils/common";
-import media from "../../styles/media";
 
 interface IPanelProps {
   data: IStep;
@@ -33,7 +32,7 @@ const StepPanel: React.FC<IPanelProps> = ({ data, onInView }) => {
 
   return (
     <Reveal keyframes={customAnimation} triggerOnce>
-      <InView threshold={0.5} delay={100} trackVisibility>
+      <InView threshold={0.1} delay={100} trackVisibility>
         {({ inView, ref }) => {
           if (inView) {
             onInView(step);
