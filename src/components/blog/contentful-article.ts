@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import colors from "../../styles/colors";
 import { link } from "../../styles/css/text";
+import media from "../../styles/media";
 import vars from "../../styles/variables";
 
 const ContentfulArticle = styled.article`
-  --deckgo-highlight-code-font-size: 0.9rem;
+  --deckgo-highlight-code-font-size: 0.8rem;
 
   /* h1 should not be allowed - only 1 h1 per page */
   h1 {
@@ -129,6 +130,10 @@ const ContentfulArticle = styled.article`
   ul,
   ol {
     padding-inline-start: 30px;
+
+    ${media.down("sm")`
+      padding-inline-start: 20px;
+    `};
   }
 
   li {

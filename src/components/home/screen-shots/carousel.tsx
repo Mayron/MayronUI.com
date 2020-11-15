@@ -12,7 +12,6 @@ interface ICarouselContext {
   shiftRight: () => void;
   shiftLeft: () => void;
   setSelected: (selected: number) => void;
-  order: number[];
   selected: number;
   maxNavItems: number;
 }
@@ -24,7 +23,6 @@ export const CarouselContext = React.createContext<ICarouselContext>({
   shiftRight: dummyFunc,
   shiftLeft: dummyFunc,
   setSelected: dummyFunc,
-  order: [],
   selected: 0,
   maxNavItems: 0,
 });
@@ -117,7 +115,6 @@ class Carousel extends React.Component<{}, ICarouselState> {
             shiftRight: this.shiftRight,
             shiftLeft: this.shiftLeft,
             setSelected: this.setSelected,
-            order: this.state.order,
             selected: this.state.selected,
             maxNavItems: this.state.maxNavItems,
           }}

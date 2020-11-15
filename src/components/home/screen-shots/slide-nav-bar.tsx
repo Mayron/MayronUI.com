@@ -8,7 +8,7 @@ import { flex } from "../../../styles/css/alignment";
 import { breakpoints } from "../../../styles/media";
 
 const SliderNavBar: React.FC = ({ children }) => {
-  const { shiftRight, shiftLeft, setSelected, selected, maxNavItems, order } = useContext(
+  const { shiftRight, shiftLeft, setSelected, selected, maxNavItems } = useContext(
     CarouselContext,
   );
   const thumbnails: React.ReactNode[] = [];
@@ -43,9 +43,7 @@ const SliderNavBar: React.FC = ({ children }) => {
               <OptionBullet
                 onClick={() => setSelected(index)}
                 className={index === selected ? "active" : ""}
-              >
-                {order[index] + 1}
-              </OptionBullet>
+              />
             ) : (
               <OptionListItem
                 onClick={() => setSelected(index)}
