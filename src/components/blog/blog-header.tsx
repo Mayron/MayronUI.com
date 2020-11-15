@@ -20,9 +20,10 @@ const BlogHeader: React.FC<IBlogHeaderProps> = ({ title, timeToRead, createdAt }
       <h1
         css={css`
           text-align: left;
-          font-size: 2rem;
-          line-height: 2.5rem;
-          padding-bottom: 31px;
+          font-size: 2.2rem;
+          line-height: 2.6rem;
+          padding-bottom: 30px;
+          text-transform: none;
         `}
       >
         {title}

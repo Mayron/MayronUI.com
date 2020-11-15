@@ -1,9 +1,14 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import styled from "@emotion/styled";
+import { useEffect, useRef } from "react";
 import { container } from "../../styles/css/containers";
 import media from "../../styles/media";
 import vars from "../../styles/variables";
+import React from "react";
+import { css } from "@emotion/core";
 
-const PageContent = styled.div`
+const StyledPageContent = styled.div`
   ${container};
   padding-top: ${vars.sectionSpacing};
   padding-bottom: ${vars.sectionSpacing};
@@ -26,5 +31,66 @@ const PageContent = styled.div`
     }
   }
 `;
+
+const PageContent: React.FC = ({ children }) => {
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const initEmbedly = (w: any, d: Document) => {
+        const id = "embedly-platform";
+        const n = "script";
+        if (!d.getElementById(id)) {
+          w.embedly =
+            w.embedly ||
+            function (...args: any[]) {
+              (w.embedly.q = w.embedly.q || []).push(args);
+            };
+          const e = d.createElement(n);
+          e.id = id;
+          e.async = true;
+          e.src =
+            (document.location.protocol === "https:" ? "https" : "http") +
+            "://cdn.embedly.com/widgets/platform.js";
+          const s = d.getElementsByTagName(n)[0];
+          s.parentNode?.insertBefore(e, s);
+        }
+      };
+
+      const cards = document.getElementsByClassName("embedly-card");
+
+      if (cards.length > 0) {
+        initEmbedly(window, document);
+        const w: any = window;
+        Array.from(cards).forEach((c) => w.embedly("card", c));
+      }
+    }
+
+    const links = bodyRef.current?.getElementsByTagName("a");
+
+    if (links && links.length > 0) {
+      Array.from(links).forEach((link) => {
+        link.target = "_blank";
+        link.rel = "noreferrer noopener";
+      });
+    }
+  }, []);
+
+  return (
+    <StyledPageContent>
+      <style className="embedly-css">
+        {`
+          .hdr, .brd, .art-bd-img {
+            display: none !important;
+          }
+
+          .txt-bd { padding: 0 !important; }
+        `}
+      </style>
+
+      {children}
+    </StyledPageContent>
+  );
+};
 
 export default PageContent;
