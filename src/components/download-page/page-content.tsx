@@ -80,11 +80,25 @@ const PageContent: React.FC = ({ children }) => {
     <StyledPageContent>
       <style className="embedly-css">
         {`
-          .hdr, .brd, .art-bd-img {
+          .hdr, .brd, .art-bd-img  {
             display: none !important;
           }
 
           .txt-bd { padding: 0 !important; }
+
+          .art-bd {
+            max-width: 1px;
+            max-height: 1px;
+            visibility: hidden;
+          }
+
+          .embedly-card-hug {
+            margin: 0 !important;
+          }
+
+          body {
+            padding: 0 !important;
+          }
         `}
       </style>
 
