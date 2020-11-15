@@ -58,9 +58,8 @@ const ContentfulArticle = styled.article`
     line-height: 1.3rem;
     font-size: 16px;
     color: ${colors.warning.text};
-    margin-left: 20px;
-    margin-right: 20px;
     display: table;
+    width: 100%;
 
     &:before {
       content: url("/images/warning.svg");
