@@ -273,6 +273,10 @@ const SectionHeader = styled.header`
     padding-bottom: 10px;
     font-size: 0.9rem;
     max-width: 700px;
+
+    ${media.down("sm")`
+      text-align: center;
+    `};
   }
 `;
 
