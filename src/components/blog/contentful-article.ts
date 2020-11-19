@@ -20,6 +20,10 @@ const ContentfulArticle = styled.article`
     color: ${colors.blue.dark};
   }
 
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   h3 {
     font-size: 1.2rem;
     font-family: ${vars.robotoFontFamily};

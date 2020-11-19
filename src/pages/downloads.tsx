@@ -9,6 +9,7 @@ import Img, { FixedObject } from "gatsby-image";
 import Section from "../styles/css/containers";
 import vars from "../styles/variables";
 import media from "../styles/media";
+import styled from "@emotion/styled";
 
 interface IProjectCardProps {
   header: string;
@@ -159,9 +160,9 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           padding-bottom: 0;
         `}
       >
-        <header>
-          <h1 css={downloadsSubHeader}>Featured Downloads</h1>
-        </header>
+        <SectionHeader>
+          <h1>Featured</h1>
+        </SectionHeader>
         <ul>
           <ProjectCard header="MayronUI" href="/p/mayronui" background={sources}>
             The full UI pack for MayronUI includes the core MUI addons, plus several other
@@ -169,10 +170,15 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           </ProjectCard>
         </ul>
       </Section>
-      <Section widthType="slim">
-        <header>
-          <h2 css={downloadsSubHeader}>Libraries</h2>
-        </header>
+      <Section
+        widthType="slim"
+        css={css`
+          padding-bottom: 0;
+        `}
+      >
+        <SectionHeader>
+          <h2>Libraries</h2>
+        </SectionHeader>
         <ul
           css={css`
             display: flex;
@@ -213,20 +219,61 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           </ProjectCard>
         </ul>
       </Section>
+      <Section widthType="slim">
+        <SectionHeader>
+          <h2>Packages</h2>
+          <p>
+            All packages only work as part of the LibMayronObjects library. Packages
+            consist of entities such as classes, instances and attributes to deliver
+            well-defined tools for addon development.
+          </p>
+        </SectionHeader>
+        <ul
+          css={css`
+            display: flex;
+            margin: -${vars.columnSpacing};
+            flex-wrap: wrap;
+
+            li {
+              margin: ${vars.columnSpacing};
+            }
+          `}
+        >
+          <ProjectCard
+            header="Pkg-GridPanels"
+            href="/p/pkg-grid-panels"
+            containImage
+            background={data.misc.childImageSharp.fixed}
+          >
+            Allows you to create UI panels using a grid of cells. The package also
+            supports responsive scroll frames that dynamically shift child elements when
+            the panel is resized.
+          </ProjectCard>
+        </ul>
+      </Section>
     </Layout>
   );
 };
 
-const downloadsSubHeader = css`
-  font-size: 1.4rem;
-  text-align: left;
-  color: ${colors.text.secondary};
-  margin: 20px 0 10px 0;
+const SectionHeader = styled.header`
+  h1,
+  h2 {
+    font-size: 1.4rem;
+    text-align: left;
+    color: ${colors.text.secondary};
+    margin: 0 0 10px 0;
 
-  ${media.down("sm")`
-    text-align: center;
-    font-size: 1.6rem;
-  `};
+    ${media.down("sm")`
+      text-align: center;
+      font-size: 1.6rem;
+    `};
+  }
+
+  p {
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+    max-width: 700px;
+  }
 `;
 
 export default DownloadsPage;

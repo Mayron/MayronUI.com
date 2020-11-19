@@ -14,6 +14,7 @@ interface IDownloadPageIntroProps {
 
 const Description = styled.p`
   font-weight: ${vars.robotoFontWeightMedium};
+  padding-right: 20px;
 `;
 
 const Header = styled.header`
