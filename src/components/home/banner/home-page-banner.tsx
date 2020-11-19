@@ -94,7 +94,7 @@ const HomePageBanner: React.FC = () => {
             `}
           >
             <FontAwesomeIcon title="Patreon" size="1x" color="white" icon={faPatreon} />
-            <span>Become a Patreon</span>
+            <span>Become a Patron</span>
           </Button>
         </div>
 
