@@ -40,25 +40,21 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout
-      title="LibMayronObjects"
-      gaCategory="LibMayronObjects"
-      backgroundColor="#F8F8F8"
-    >
+    <Layout title="MayronObjects" gaCategory="MayronObjects" backgroundColor="#F8F8F8">
       <DownloadPageIntro
-        header="LibMayronObjects"
+        header="MayronObjects"
         description="A framework to make object-oriented programming (OOP) easier for Lua developers and World of Warcraft addOn development."
       >
         <BlizzardButton
           large
           text="Download from WoWInterface"
-          href="https://www.wowinterface.com/downloads/info24450-LibMayronObjects.html"
+          href="https://www.wowinterface.com/downloads/info24450-MayronObjects.html"
           ga={{ action: "Download", label: "WoWInterface" }}
         />
         <BlizzardButton
           large
           text="Download from CurseForge"
-          href="https://www.curseforge.com/wow/addons/libmayronobjects/files"
+          href="https://www.curseforge.com/wow/addons/mayronobjects/files"
           ga={{ action: "Download", label: "CurseForge" }}
         />
       </DownloadPageIntro>

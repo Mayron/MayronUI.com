@@ -39,7 +39,7 @@ const vars = {
   // The spacing under a section header
   headerBottomSpacing: "40px",
   columnSpacing: "10px",
-  textContainerWidth: "680px",
+  textContainerWidth: "740px",
   borderRadius: "4px",
 };
 

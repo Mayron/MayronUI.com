@@ -50,7 +50,7 @@ const DownloadPageIntro: React.FC<IDownloadPageIntroProps> = ({
       css={[
         container,
         css`
-          max-width: 1000px;
+          max-width: 1060px;
           padding-top: 20px;
         `,
       ]}

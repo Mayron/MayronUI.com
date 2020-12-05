@@ -6,7 +6,6 @@ import { container } from "../../styles/css/containers";
 import media from "../../styles/media";
 import vars from "../../styles/variables";
 import React from "react";
-import { css } from "@emotion/core";
 
 const StyledPageContent = styled.div`
   ${container};
@@ -15,7 +14,7 @@ const StyledPageContent = styled.div`
   position: relative;
   display: flex;
   align-items: flex-start;
-  max-width: 1000px;
+  max-width: 1060px;
   width: 100%;
 
   ${media.down("xs")`

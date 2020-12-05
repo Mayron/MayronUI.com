@@ -75,7 +75,7 @@ interface IStep {
 const Step = styled.button<IStep>(
   (props) => css`
     position: relative;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border: none;
     outline: none;
     cursor: pointer;

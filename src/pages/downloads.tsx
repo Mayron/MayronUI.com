@@ -191,8 +191,8 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           `}
         >
           <ProjectCard
-            header="LibMayronObjects"
-            href="/p/lib-mayron-objects"
+            header="MayronObjects"
+            href="/p/mayron-objects"
             containImage
             background={data.misc.childImageSharp.fixed}
           >
