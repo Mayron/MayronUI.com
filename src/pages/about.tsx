@@ -70,7 +70,7 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
             </Button>{" "}
             are two powerful libraries with low memory footprints that were created as
             part of the MUI engine but were later refactored and extracted as Lua
-            libraries for general use. LibMayronObjects provides the module system for MUI
+            libraries for general use. MayronObjects provides the module framework for MUI
             while LibMayronDB provides the embedded database and a concept called “update
             functions” to provide a streamlined approach for automatically updating the UI
             when the state of the database changes.
@@ -98,7 +98,7 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
         </Panel>
         <Panel header="Who is Mayron?">
           <p>
-            Mayron is the single developer behind MayronUI, LibMayronDB, LibMayronObjects,
+            Mayron is the single developer behind MayronUI, LibMayronDB, MayronObjects,
             Pkg-GridPanels, and LibMayronEvents, and offers many Lua programming lessons
             hosted on his{" "}
             <Button

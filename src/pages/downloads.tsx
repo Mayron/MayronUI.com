@@ -223,7 +223,7 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
         <SectionHeader>
           <h2>Packages</h2>
           <p>
-            All packages only work as part of the LibMayronObjects library. Packages
+            All packages only work as part of the MayronObjects framework. Packages
             consist of entities such as classes, instances and attributes to deliver
             well-defined tools for addon development.
           </p>

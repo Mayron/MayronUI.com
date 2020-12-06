@@ -43,7 +43,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     <Layout title="Pkg-GridPanels" gaCategory="Pkg-GridPanels" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="Pkg-GridPanels"
-        description="A LibMayronObjects package that allows you to create UI panels using a grid of cells. The package also
+        description="A MayronObjects package that allows you to create UI panels using a grid of cells. The package also
         supports responsive scroll frames that dynamically shift child elements when the panel is resized."
       >
         <BlizzardButton
