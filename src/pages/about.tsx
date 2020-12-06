@@ -61,8 +61,8 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
             As more major iterations were released, more addons written by other addon
             authors were replaced with MUI modules. All modules are contained and
             controlled by the MUI “engine” that powers the UI under the hood.{" "}
-            <Button type="text" href="/p/lib-mayron-objects">
-              LibMayronObjects
+            <Button type="text" href="/p/mayron-objects">
+              MayronObjects
             </Button>{" "}
             and{" "}
             <Button type="text" href="/p/lib-mayron-db">

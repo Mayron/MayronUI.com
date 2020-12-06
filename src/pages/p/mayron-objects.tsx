@@ -20,7 +20,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     graphql`
       query {
         allContentfulProjectStep(
-          filter: { projectId: { eq: "lib-mayron-objects" } }
+          filter: { projectId: { eq: "mayron-objects" } }
           sort: { fields: step }
         ) {
           edges {
