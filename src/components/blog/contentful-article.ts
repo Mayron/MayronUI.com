@@ -24,6 +24,11 @@ const ContentfulArticle = styled.article`
     max-width: 100%;
     margin: 0 auto;
   }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
   h3 {
     font-size: 1.2rem;
     font-family: ${vars.robotoFontFamily};
