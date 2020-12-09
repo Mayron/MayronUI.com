@@ -25,6 +25,10 @@ const ContentfulArticle = styled.article`
     margin: 0 auto;
   }
 
+  .sm-img img {
+    margin-left: 15px;
+  }
+
   h2 {
     font-size: 1.6rem;
   }
