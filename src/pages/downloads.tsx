@@ -38,7 +38,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({
         css={css`
           text-decoration: none;
           display: block;
-          width: 241px;
+          width: 235px;
           color: ${colors.black};
           background-color: ${colors.white};
           border: 1px solid ${colors.grey.uiBorder};
@@ -161,7 +161,7 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
         `}
       >
         <SectionHeader>
-          <h1>Featured</h1>
+          <h1>Featured Projects</h1>
         </SectionHeader>
         <ul>
           <ProjectCard header="MayronUI" href="/p/mayronui" background={sources}>
@@ -177,16 +177,22 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
         `}
       >
         <SectionHeader>
-          <h2>Libraries</h2>
+          <h2>Developer Tools</h2>
+          <p>
+            The MayronObjects framework offers a feature rich, packaging ecosystem. Each
+            package created from this framework consists of entities such as classes,
+            instances and attributes to deliver well-defined APIs for addon development.
+          </p>
         </SectionHeader>
         <ul
           css={css`
             display: flex;
             margin: -${vars.columnSpacing};
             flex-wrap: wrap;
+            padding: 20px 5px 40px 5px;
 
             li {
-              margin: ${vars.columnSpacing};
+              margin: 6px;
             }
           `}
         >
@@ -201,8 +207,8 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           </ProjectCard>
 
           <ProjectCard
-            header="LibMayronDB"
-            href="/p/lib-mayron-db"
+            header="Pkg-MayronDB"
+            href="/p/pkg-mayron-db"
             containImage
             background={data.misc.childImageSharp.fixed}
           >
@@ -210,44 +216,22 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           </ProjectCard>
 
           <ProjectCard
-            header="LibMayronEvents"
-            href="/p/lib-mayron-events"
+            header="Pkg-MayronEvents"
+            href="/p/pkg-mayron-events"
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            A simple event management library for WoW addon development.
+            A simple event management package for WoW addon development with support for
+            custom addon events.
           </ProjectCard>
-        </ul>
-      </Section>
-      <Section widthType="slim">
-        <SectionHeader>
-          <h2>Packages</h2>
-          <p>
-            All packages only work as part of the MayronObjects framework. Packages
-            consist of entities such as classes, instances and attributes to deliver
-            well-defined tools for addon development.
-          </p>
-        </SectionHeader>
-        <ul
-          css={css`
-            display: flex;
-            margin: -${vars.columnSpacing};
-            flex-wrap: wrap;
-
-            li {
-              margin: ${vars.columnSpacing};
-            }
-          `}
-        >
           <ProjectCard
             header="Pkg-GridPanels"
             href="/p/pkg-grid-panels"
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            Allows you to create UI panels using a grid of cells. The package also
-            supports responsive scroll frames that dynamically shift child elements when
-            the panel is resized.
+            Create responsive UI panels using a grid of cells, and responsive scroll
+            frames that dynamically shift child elements when resized.
           </ProjectCard>
         </ul>
       </Section>
@@ -272,7 +256,6 @@ const SectionHeader = styled.header`
   p {
     padding-bottom: 10px;
     font-size: 0.9rem;
-    max-width: 700px;
 
     ${media.down("sm")`
       text-align: center;

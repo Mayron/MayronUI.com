@@ -20,7 +20,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     graphql`
       query {
         allContentfulProjectStep(
-          filter: { projectId: { eq: "lib-mayron-db" } }
+          filter: { projectId: { eq: "pkg-mayron-db" } }
           sort: { fields: step }
         ) {
           edges {
@@ -40,10 +40,10 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout title="LibMayronDB" gaCategory="LibMayronDB" backgroundColor="#F8F8F8">
+    <Layout title="Pkg-MayronDB" gaCategory="Pkg-MayronDB" backgroundColor="#F8F8F8">
       <DownloadPageIntro
-        header="LibMayronDB"
-        description="A lightweight, feature rich World of Warcraft AddOn database."
+        header="Pkg-MayronDB"
+        description="A lightweight, feature rich World of Warcraft addon database."
       >
         <BlizzardButton
           large

@@ -20,7 +20,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     graphql`
       query {
         allContentfulProjectStep(
-          filter: { projectId: { eq: "lib-mayron-events" } }
+          filter: { projectId: { eq: "pkg-mayron-events" } }
           sort: { fields: step }
         ) {
           edges {
@@ -41,13 +41,13 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
 
   return (
     <Layout
-      title="LibMayronEvents"
-      gaCategory="LibMayronEvents"
+      title="Pkg-MayronEvents"
+      gaCategory="Pkg-MayronEvents"
       backgroundColor="#F8F8F8"
     >
       <DownloadPageIntro
-        header="LibMayronEvents"
-        description="A lightweight event management library for World of Warcraft."
+        header="Pkg-MayronEvents"
+        description="A lightweight event management package for World of Warcraft with support for custom addon events."
       >
         <BlizzardButton
           large

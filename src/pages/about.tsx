@@ -61,45 +61,45 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
             As more major iterations were released, more addons written by other addon
             authors were replaced with MUI modules. All modules are contained and
             controlled by the MUI “engine” that powers the UI under the hood.{" "}
+            <Button type="text" href="/p/pkg-mayron-db">
+              Pkg-MayronDB
+            </Button>{" "}
+            and{" "}
+            <Button type="text" href="/p/pkg-mayron-events">
+              Pkg-MayronEvents
+            </Button>{" "}
+            are two powerful packages with low memory footprints that were developed using
+            the{" "}
             <Button type="text" href="/p/mayron-objects">
               MayronObjects
             </Button>{" "}
-            and{" "}
-            <Button type="text" href="/p/lib-mayron-db">
-              LibMayronDB
-            </Button>{" "}
-            are two powerful libraries with low memory footprints that were created as
-            part of the MUI engine but were later refactored and extracted as Lua
-            libraries for general use. MayronObjects provides the module framework for MUI
-            while LibMayronDB provides the embedded database and a concept called “update
-            functions” to provide a streamlined approach for automatically updating the UI
-            when the state of the database changes.
+            framework. These were created as part of the MUI engine but were later
+            refactored and extracted as packages for general use. MayronObjects provides
+            the module framework for MUI while Pkg-MayronDB provides the embedded database
+            and a concept called “update functions” to provide a streamlined approach for
+            automatically updating the UI when the state of the database changes.
+            Pkg-MayronEvents provides an event management system for creating, destroying,
+            enabling, and disabling event handlers, and many other quality of life
+            features.
           </p>
           <p>
-            In addition to these libraries, two other large chunks of code were extracted
-            out of the MUI engine and refactored for general use:{" "}
+            In addition to these packages, a large chunk of code was extracted out of the
+            MUI engine and bundled into another package for general use:{" "}
             <Button type="text" href="/p/pkg-grid-panels">
               Pkg-GridPanels
-            </Button>{" "}
-            and{" "}
-            <Button type="text" href="/p/lib-mayron-events">
-              LibMayronEvents
             </Button>
             . Pkg-GridPanels originated from the old LibMayronGUI library. This library is
             still being used in MUI to provide many utility functions to create widgets
-            and menus. The grid system for providing responsive UI panels was extracted
-            and bundled into what eventually became Pkg-GridPanels. Finally,{" "}
-            <Button type="text" href="/p/lib-mayron-events">
-              LibMayronEvents
-            </Button>{" "}
-            provides an event management system for creating, destroying, enabling, and
-            disabling event handlers, and many other quality of life features.
+            and menus, but the lighter package version, Pkg-GridPanels, has been designed
+            for use in other addon projects. This version only provides the grid system
+            that MayronUI uses to implement responsive UI panels (similar to how CSS-Grid
+            and CSS-Flexbox works on the web).
           </p>
         </Panel>
         <Panel header="Who is Mayron?">
           <p>
-            Mayron is the single developer behind MayronUI, LibMayronDB, MayronObjects,
-            Pkg-GridPanels, and LibMayronEvents, and offers many Lua programming lessons
+            Mayron is the single developer behind MayronUI, Pkg-MayronDB, MayronObjects,
+            Pkg-GridPanels, and Pkg-MayronEvents, and offers many Lua programming lessons
             hosted on his{" "}
             <Button
               type="text"
