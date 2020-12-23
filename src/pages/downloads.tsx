@@ -181,7 +181,7 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
           <p>
             The MayronObjects framework offers a feature rich, packaging ecosystem. Each
             package created from this framework consists of entities such as classes,
-            instances and attributes to deliver well-defined APIs for addon development.
+            interfaces and attributes to deliver well-defined APIs for addon development.
           </p>
         </SectionHeader>
         <ul
