@@ -43,7 +43,8 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     <Layout title="Pkg-MayronDB" gaCategory="Pkg-MayronDB" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="Pkg-MayronDB"
-        description="A lightweight, feature rich World of Warcraft addon database."
+        description="A lightweight, feature rich embedded addon database for managing addon
+        settings with built-in profile management."
       >
         <BlizzardButton
           large

@@ -202,8 +202,8 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            A framework to make object-oriented programming (OOP) easier for Lua
-            developers and WoW addon development.
+            An OOP Lua framework and packaging ecosystem for developing well-defined
+            packages with strict typing support.
           </ProjectCard>
 
           <ProjectCard
@@ -212,7 +212,8 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
             containImage
             background={data.misc.childImageSharp.fixed}
           >
-            A lightweight, feature rich embedded addon database for WoW addon development.
+            A lightweight, feature rich embedded addon database for managing addon
+            settings with built-in profile management.
           </ProjectCard>
 
           <ProjectCard

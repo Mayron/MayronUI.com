@@ -43,7 +43,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
     <Layout title="MayronObjects" gaCategory="MayronObjects" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="MayronObjects"
-        description="A framework to make object-oriented programming (OOP) easier for Lua developers and World of Warcraft addOn development."
+        description="An object-oriented programming (OOP) framework and packaging ecosystem. MayronObjects allows you to create well-defined packages with strict typing rules for other addon authors to use in their addon projects to improve the development experience."
       >
         <BlizzardButton
           large
