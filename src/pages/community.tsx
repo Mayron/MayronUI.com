@@ -36,7 +36,7 @@ const CommunityPage: React.FC<RouteComponentProps> = () => {
   ];
 
   return (
-    <Layout title="Community" gaCategory="Community">
+    <Layout title="Community" page="Community">
       <Img
         fluid={sources}
         draggable={false}

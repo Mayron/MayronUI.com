@@ -7,7 +7,7 @@ import Button from "../components/widgets/button";
 
 const AboutPage: React.FC<RouteComponentProps> = () => {
   return (
-    <Layout title="About" gaCategory="About" backgroundColor="#F8F8F8">
+    <Layout title="About" page="About" backgroundColor="#F8F8F8">
       <Section widthType="text">
         <Panel header="What is MayronUI?">
           <p>
@@ -183,11 +183,7 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
           <p>For all business enquiries please email mayron.wow@gmail.com.</p>
           <p>
             You can also visit my{" "}
-            <Button
-              type="text"
-              href="https://www.linkedin.com/in/michael-john-richards/"
-              ga={{ action: "LinkedIn" }}
-            >
+            <Button type="text" href="https://www.linkedin.com/in/michael-john-richards/">
               LinkedIn profile
             </Button>{" "}
             for additional details.

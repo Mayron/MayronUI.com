@@ -38,17 +38,17 @@ const scroller = () => {
 };
 
 interface ILayoutProps {
-  gaCategory: string;
+  page: string;
   title?: string;
   collapsed?: boolean;
   description?: string;
   backgroundColor?: string;
 }
 
-export const LayoutContext = createContext({ gaCategory: "Unknown" });
+export const LayoutContext = createContext({ page: "Unknown" });
 
 const Layout: React.FC<ILayoutProps> = ({
-  gaCategory,
+  page,
   title,
   collapsed,
   children,
@@ -62,20 +62,20 @@ const Layout: React.FC<ILayoutProps> = ({
   }, [isCollapsed]);
 
   useEffect(() => {
-    if (gaCategory !== "Home") {
+    if (page !== "Home") {
       window.removeEventListener("scroll", scroller);
       document.body.classList.add("shrink");
     } else {
       window.addEventListener("scroll", scroller);
     }
-  }, [gaCategory]);
+  }, [page]);
 
   return (
     <React.Fragment>
       <Global styles={[getMediaQueryCssClasses(), globalStyles]} />
       <SEO title={title} description={description} />
 
-      <LayoutContext.Provider value={{ gaCategory }}>
+      <LayoutContext.Provider value={{ page }}>
         <TopNavBar onBurgerMenuClick={handleBurgerMenuClicked} />
         <PageContent backgroundColor={backgroundColor || colors.white}>
           {children}

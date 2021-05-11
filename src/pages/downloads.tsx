@@ -153,7 +153,7 @@ const DownloadsPage: React.FC<RouteComponentProps> = () => {
   ];
 
   return (
-    <Layout title="Downloads" gaCategory="Downloads" backgroundColor="#F8F8F8">
+    <Layout title="Downloads" page="Downloads" backgroundColor="#F8F8F8">
       <Section
         widthType="slim"
         css={css`

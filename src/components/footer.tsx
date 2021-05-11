@@ -10,7 +10,7 @@ import SocialMediaIcons from "./home/banner/social-media-icons";
 import { LayoutContext } from "./layout";
 
 const Footer: React.FC = () => {
-  const { gaCategory } = useContext(LayoutContext);
+  const { page } = useContext(LayoutContext);
 
   return (
     <footer
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         display: flex;
         flex-direction: column;
 
-        ${gaCategory === "Home" &&
+        ${page === "Home" &&
         css`
           padding-top: 140px;
           padding-top: 105px;
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             margin-bottom: 20px;
           }
 
-          ${gaCategory === "Home" &&
+          ${page === "Home" &&
           css`
             section {
               padding-top: 0;

@@ -109,7 +109,7 @@ const BlogPage: React.FC<RouteComponentProps> = () => {
   });
 
   return (
-    <Layout title="Blog" gaCategory="Blog" backgroundColor="#F8F8F8">
+    <Layout title="Blog" page="Blog" backgroundColor="#F8F8F8">
       <Section
         widthType="text"
         css={css`

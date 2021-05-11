@@ -60,27 +60,18 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
       <li>
         <GaLink
           href="https://www.youtube.com/channel/UCCu-NuBYVi7yokZmKBCBvHw"
-          ga={{ action: "BannerSocialIcon", label: "YouTube" }}
           target="_blank"
         >
           <FontAwesomeIcon title="YouTube" size="2x" color="#fe0000" icon={faYoutube} />
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://www.twitch.tv/mayronwow"
-          ga={{ action: "BannerSocialIcon", label: "Twitch" }}
-          target="_blank"
-        >
+        <GaLink href="https://www.twitch.tv/mayronwow" target="_blank">
           <FontAwesomeIcon title="Twitch" size="2x" color="#864dee" icon={faTwitch} />
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://twitter.com/MayronWoW"
-          ga={{ action: "BannerSocialIcon", label: "Twitter" }}
-          target="_blank"
-        >
+        <GaLink href="https://twitter.com/MayronWoW" target="_blank">
           <FontAwesomeIcon
             title="Twitter"
             size="2x"
@@ -90,11 +81,7 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://discord.gg/8Kh3maU"
-          ga={{ action: "BannerSocialIcon", label: "Discord" }}
-          target="_blank"
-        >
+        <GaLink href="https://discord.gg/8Kh3maU" target="_blank">
           <FontAwesomeIcon
             title="Discord"
             size="2x"
@@ -105,21 +92,13 @@ const SocialMediaIcons: React.FC<ISocialMediaIconsProps> = ({ includePatreon }) 
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://github.com/Mayron/MayronUI-Official"
-          ga={{ action: "BannerSocialIcon", label: "GitHub" }}
-          target="_blank"
-        >
+        <GaLink href="https://github.com/Mayron/MayronUI-Official" target="_blank">
           <FontAwesomeIcon title="GitHub" size="2x" color="white" icon={faGithubSquare} />
         </GaLink>
       </li>
       {includePatreon && (
         <li>
-          <GaLink
-            href="https://www.patreon.com/mayronWoW"
-            ga={{ action: "BannerSocialIcon", label: "Patreon" }}
-            target="_blank"
-          >
+          <GaLink href="https://www.patreon.com/mayronWoW" target="_blank">
             <FontAwesomeIcon title="Patreon" size="2x" color="#ff424d" icon={faPatreon} />
           </GaLink>
         </li>

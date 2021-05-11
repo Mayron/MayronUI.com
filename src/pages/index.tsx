@@ -11,7 +11,7 @@ import TimerBars from "../components/home/timer-bars";
 
 const IndexPage: React.FC<RouteComponentProps> = () => {
   return (
-    <Layout gaCategory="Home">
+    <Layout page="Home">
       <Banner />
       <Introduction />
       <ScreenShots />

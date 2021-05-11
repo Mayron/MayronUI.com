@@ -40,26 +40,18 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout
-      title="Pkg-MayronEvents"
-      gaCategory="Pkg-MayronEvents"
-      backgroundColor="#F8F8F8"
-    >
+    <Layout title="Pkg-MayronEvents" page="Pkg-MayronEvents" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="Pkg-MayronEvents"
         description="A lightweight event management package for World of Warcraft with support for custom addon events."
       >
         <BlizzardButton
-          large
           text="Download from WoWInterface"
           href="https://www.curseforge.com/wow/addons/libmayronevents/files"
-          ga={{ action: "Download", label: "WoWInterface" }}
         />
         <BlizzardButton
-          large
           text="Download from CurseForge"
           href="https://www.curseforge.com/wow/addons/libmayronevents/files"
-          ga={{ action: "Download", label: "CurseForge" }}
         />
       </DownloadPageIntro>
 

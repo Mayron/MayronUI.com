@@ -43,7 +43,7 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout title="MayronUI" gaCategory="MayronUI" backgroundColor="#F8F8F8">
+    <Layout title="MayronUI" page="MayronUI" backgroundColor="#F8F8F8">
       <MuiBanner>
         <div
           css={[
@@ -62,14 +62,8 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
           ]}
         >
           <BlizzardButton
-            text="Download for Retail"
-            href="https://www.wowinterface.com/downloads/info21221-MayronUIGen6.html"
-            ga={{ action: "MayronUI", label: "DownloadRetail" }}
-          />
-          <BlizzardButton
-            text="Download for Classic"
-            href="https://www.wowinterface.com/downloads/fileinfo.php?id=25225"
-            ga={{ action: "MayronUI", label: "DownloadClassic" }}
+            text="Download from WoWInterface"
+            href="https://www.wowinterface.com/downloads/info21221-MayronUI.html"
           />
         </div>
       </MuiBanner>

@@ -40,23 +40,19 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout title="Pkg-GridPanels" gaCategory="Pkg-GridPanels" backgroundColor="#F8F8F8">
+    <Layout title="Pkg-GridPanels" page="Pkg-GridPanels" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="Pkg-GridPanels"
         description="A MayronObjects package that allows you to create UI panels using a grid of cells. The package also
         supports responsive scroll frames that dynamically shift child elements when the panel is resized."
       >
         <BlizzardButton
-          large
           text="Download from WoWInterface"
           href="https://www.wowinterface.com/downloads/fileinfo.php?id=25787"
-          ga={{ action: "Download", label: "WoWInterface" }}
         />
         <BlizzardButton
-          large
           text="Download from CurseForge"
           href="https://www.curseforge.com/wow/addons/pkg-gridpanels/files"
-          ga={{ action: "Download", label: "CurseForge" }}
         />
       </DownloadPageIntro>
 

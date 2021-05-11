@@ -41,36 +41,23 @@ const BlogSocialMediaIcons: React.FC = () => {
       <li>
         <GaLink
           href="https://www.youtube.com/channel/UCCu-NuBYVi7yokZmKBCBvHw"
-          ga={{ action: "BlogSocialIcon", label: "YouTube" }}
           target="_blank"
         >
           <FontAwesomeIcon title="YouTube" size="2x" color={darkGrey} icon={faYoutube} />
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://www.twitch.tv/mayronwow"
-          ga={{ action: "BlogSocialIcon", label: "Twitch" }}
-          target="_blank"
-        >
+        <GaLink href="https://www.twitch.tv/mayronwow" target="_blank">
           <FontAwesomeIcon title="Twitch" size="2x" color={darkGrey} icon={faTwitch} />
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://twitter.com/MayronWoW"
-          ga={{ action: "BlogSocialIcon", label: "Twitter" }}
-          target="_blank"
-        >
+        <GaLink href="https://twitter.com/MayronWoW" target="_blank">
           <FontAwesomeIcon title="Twitter" size="2x" color={darkGrey} icon={faTwitter} />
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://discord.gg/8Kh3maU"
-          ga={{ action: "BlogSocialIcon", label: "Discord" }}
-          target="_blank"
-        >
+        <GaLink href="https://discord.gg/8Kh3maU" target="_blank">
           <FontAwesomeIcon
             title="Discord"
             size="2x"
@@ -81,21 +68,13 @@ const BlogSocialMediaIcons: React.FC = () => {
         </GaLink>
       </li>
       <li>
-        <GaLink
-          href="https://github.com/Mayron/MayronUI-Official"
-          ga={{ action: "BlogSocialIcon", label: "GitHub" }}
-          target="_blank"
-        >
+        <GaLink href="https://github.com/Mayron/MayronUI-Official" target="_blank">
           <FontAwesomeIcon title="GitHub" size="2x" color={darkGrey} icon={faGithub} />
         </GaLink>
       </li>
 
       <li>
-        <GaLink
-          href="https://www.patreon.com/mayronWoW"
-          ga={{ action: "BlogSocialIcon", label: "Patreon" }}
-          target="_blank"
-        >
+        <GaLink href="https://www.patreon.com/mayronWoW" target="_blank">
           <FontAwesomeIcon title="Patreon" size="2x" color={darkGrey} icon={faPatreon} />
         </GaLink>
       </li>

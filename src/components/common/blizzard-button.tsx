@@ -1,27 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React, { useContext } from "react";
+import React from "react";
 import colors from "../../styles/colors";
-import { sendGtagEvent } from "../../utils/common";
-import { LayoutContext } from "../layout";
 
 interface IBlizzardButtonProps {
   text: string;
   href: string;
-  ga: { action: string; label?: string; value?: number };
-  large?: boolean;
 }
 
-const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga, large }) => {
-  const { gaCategory } = useContext(LayoutContext);
-
-  const handleOnClick = () => {
-    sendGtagEvent(gaCategory, ga.action, ga.label, ga.value);
-  };
-
+const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href }) => {
   return (
     <a
-      onClick={handleOnClick}
       href={href}
       rel="noopener noreferrer"
       target="_blank"
@@ -36,15 +25,8 @@ const BlizzardButton: React.FC<IBlizzardButtonProps> = ({ text, href, ga, large 
         text-decoration: none;
         justify-content: center;
         align-items: center;
-
-        ${large
-          ? css`
-              width: 300px;
-              font-size: 0.9rem;
-            `
-          : css`
-              width: 238px;
-            `};
+        width: 300px;
+        font-size: 0.9rem;
 
         img {
           width: 100%;

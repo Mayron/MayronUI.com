@@ -40,23 +40,19 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
   );
 
   return (
-    <Layout title="Pkg-MayronDB" gaCategory="Pkg-MayronDB" backgroundColor="#F8F8F8">
+    <Layout title="Pkg-MayronDB" page="Pkg-MayronDB" backgroundColor="#F8F8F8">
       <DownloadPageIntro
         header="Pkg-MayronDB"
         description="A lightweight, feature rich embedded addon database for managing addon
         settings with built-in profile management."
       >
         <BlizzardButton
-          large
           text="Download from WoWInterface"
           href="https://www.wowinterface.com/downloads/info24356-LibMayronDB.html#info"
-          ga={{ action: "Download", label: "WoWInterface" }}
         />
         <BlizzardButton
-          large
           text="Download from CurseForge"
           href="https://www.curseforge.com/wow/addons/libmayrondb/files"
-          ga={{ action: "Download", label: "CurseForge" }}
         />
       </DownloadPageIntro>
 
