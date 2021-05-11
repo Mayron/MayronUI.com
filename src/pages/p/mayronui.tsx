@@ -44,34 +44,17 @@ const MuiDownloadsPage: React.FC<RouteComponentProps> = () => {
 
   return (
     <Layout title="MayronUI" page="MayronUI" backgroundColor="#F8F8F8">
-      <MuiBanner>
-        <div
-          css={[
-            container,
-            css`
-              display: flex;
-              flex-direction: column;
-              align-items: flex-end;
-              padding-right: 150px;
-
-              ${media.down("sm")`
-                align-items: center;
-                padding-right: 30px;
-              `};
-            `,
-          ]}
-        >
-          <BlizzardButton
-            text="Download from WoWInterface"
-            href="https://www.wowinterface.com/downloads/info21221-MayronUI.html"
-          />
-        </div>
-      </MuiBanner>
+      <MuiBanner />
 
       <DownloadPageIntro
         header="MayronUI"
         description="A minimalistic, Graphical, World of Warcraft UI Replacement Package."
-      />
+      >
+        <BlizzardButton
+          text="Download from WoWInterface"
+          href="https://www.wowinterface.com/downloads/info21221-MayronUI.html"
+        />
+      </DownloadPageIntro>
 
       <PageContent>
         <section>

@@ -46,7 +46,7 @@ const MuiBanner: React.FC = ({ children }) => {
         fluid={sources}
         draggable={false}
         css={css`
-          height: 500px;
+          height: 400px;
 
           @media (max-width: 768px) {
             height: 200px;
