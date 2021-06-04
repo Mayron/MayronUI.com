@@ -14,48 +14,56 @@ type SlideNode = {
 const SlideData = new Map<string, SlideNode>();
 
 SlideData.set("1", {
-  title: "Ready for Shadowlands!",
+  title: "Ready for Burning Crusade Classic!",
   summary:
-    "The UI is being actively developed and tested on the Shadowlands beta servers to ensure users are able to use MayronUI throughout their Shadowlands leveling experience on release date.",
+    /* eslint-disable quotes */
+    'Take MayronUI into Burning Crusader Classic, with many new improvements and features! Our <a target="_blank" href="https://mayronui.com/community">Discord community server</a> has never been so busy and ready to help, so make sure to join us and ask questions if you get stuck.',
 });
 
 SlideData.set("2", {
+  title: "New Tool-Tips Module",
+  summary:
+    /* eslint-disable quotes */
+    'Recently, a large update added several <a target="_blank" href="https://mayronui.com/blog/post/introducing-the-new-tool-tips-module-and-support-for-burning-crusade-classic">improvements and features</a>, including a new Tool-Tips module that tracks auras and shows additional unit info such as the unit\'s specialization, item level, and their current target.',
+});
+
+SlideData.set("3", {
+  title: "Support for All WoW Clients",
+  summary:
+    "MayronUI supports all 3 versions of WoW, including Retail (e.g., Shadowlands), Classic and Burning Crusade Classic, with new updates for each version released in-sync.",
+});
+
+SlideData.set("4", {
   title: "Easy to install",
   summary:
     "Just login to a character and hit the install button. It&#39;s that easy! There is also an alternative &#34;custom install&#34; menu for more advanced installation options.",
 });
 
-SlideData.set("3", {
-  title: "Supports WoW Classic",
-  summary:
-    "MayronUI supports both retail and classic editions of World of Warcraft. Both can be updated from curseforge using an addon updater program such as the <a target='_blank' href='https://www.twitch.tv/downloads'>Twitch app</a>.",
-});
-
-SlideData.set("4", {
+SlideData.set("5", {
   title: "Healing Layout",
   summary:
     "By default, the UI is preconfigured to include a DPS and a Healing layout. The Healing layout uses larger raid frames positioned near your target with a larger power bar. You can add as many layouts as you like and choose which addons should switch to which profiles when a given layout is activated.",
 });
 
-SlideData.set("5", {
+SlideData.set("6", {
   title: "Interactive AFK Screen",
   summary:
     "This specially customised AFK screen shows an animated model of your character, which can be picked up and thrown around on the screen! It also tracks your missed whispers and guild chat messages.",
 });
 
-SlideData.set("6", {
+SlideData.set("7", {
   title: "Chat Frame and Action Bars",
   summary:
     "Enable different chat frames for each corner of the screen and easily toggle a between one or two rows of action bars.",
 });
 
-SlideData.set("7", {
+SlideData.set("8", {
   title: "Minimalistic and Graphical Design",
   summary:
     "While going on solo adventures, your UI should not be a distraction; MayronUI has been designed with minimalism in mind to keep you focused on the world around you while still offering a graphically aesthetic look and feel.",
 });
 
-SlideData.set("8", {
+SlideData.set("9", {
   title: "Modules, Profiles and Layouts",
   summary:
     "Customise your UI however you like and save those changes to different profiles to be used across all your characters. Use custom layouts to switch multiple profiles at once for each of your installed addons (not just MayronUI).",

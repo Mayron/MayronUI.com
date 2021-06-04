@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import { Fade } from "react-awesome-reveal";
 import Slide, { ISlideProps } from "./slide";
 import SliderNavBar from "./slide-nav-bar";
-import media, { breakpoints } from "../../../styles/media";
+import media from "../../../styles/media";
 
 interface ICarouselContext {
   shiftRight: () => void;

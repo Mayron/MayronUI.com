@@ -82,24 +82,32 @@ const Introduction: React.FC = () => {
           position: relative;
           z-index: 10;
           margin-top: 40px;
-          height: 208px;
+          height: 260px;
 
-          img {
+          video {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
             margin: 0 auto;
+            display: block;
           }
 
           ${media.down("md")`
             height: auto;
             margin-top: 10px;
 
-            img {
+            video {
               width: 100%;
               max-width: 720px;
             }
           `};
         `}
       >
-        <LazyImage src="/images/unitframes.gif" alt="Toggle additional action bars" />
+        <video loop autoPlay playsInline preload="auto" poster="/mui-bottomui.jpg">
+          <source src="/mui-bottomui.webm" type="video/webm" />
+          <source src="/mui-bottomui.mp4" type="video/mp4" />
+          <img src="/mui-bottomui.jpg" alt="Preview" />
+        </video>
       </Fade>
     </Section>
   );
