@@ -103,9 +103,8 @@ const Introduction: React.FC = () => {
           `};
         `}
       >
-        <video loop autoPlay playsInline preload="auto" poster="/mui-bottomui.jpg">
-          <source src="/mui-bottomui.webm" type="video/webm" />
-          <source src="/mui-bottomui.mp4" type="video/mp4" />
+        <video muted loop autoPlay playsInline preload="auto" poster="/mui-bottomui.jpg">
+          <source type="video/webm" src="/mui-bottomui.webm" />
           <img src="/mui-bottomui.jpg" alt="Preview" />
         </video>
       </Fade>
