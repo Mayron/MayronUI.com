@@ -15,15 +15,24 @@ const AboutPage: React.FC<RouteComponentProps> = () => {
             alternative for Blizzard Entertainment’s popular World of Warcraft (WoW)
             MMORPG. More specifically, it is an addon pack consisting of three core
             MUI-specific addons (
-            <Button type="text" href="https://www.curseforge.com/wow/addons/mui_core">
+            <Button
+              type="text"
+              href="https://www.curseforge.com/wow/addons/mui-core-shadowlands"
+            >
               MUI_Core
             </Button>
             ,{" "}
-            <Button type="text" href="https://www.curseforge.com/wow/addons/mui_setup">
+            <Button
+              type="text"
+              href="https://www.curseforge.com/wow/addons/mui-setup-retail"
+            >
               MUI_Setup
             </Button>
             , and{" "}
-            <Button type="text" href="https://www.curseforge.com/wow/addons/mui_config">
+            <Button
+              type="text"
+              href="https://www.curseforge.com/wow/addons/mui-config-retail"
+            >
               MUI_Config
             </Button>
             ) as well as several others developed by other addon authors that can be

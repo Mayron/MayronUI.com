@@ -63,6 +63,23 @@ const ContentfulArticle = styled.article`
     }
   }
 
+  ul,
+  ol {
+    padding-bottom: 0;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    p {
+      padding-bottom: 15px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
   .warning {
     background-color: ${colors.warning.background};
     border: 1px solid ${colors.warning.border};
@@ -142,17 +159,35 @@ const ContentfulArticle = styled.article`
   ul,
   ol {
     padding-inline-start: 30px;
+    padding-bottom: 15px;
 
     ${media.down("sm")`
       padding-inline-start: 20px;
     `};
+
+    li {
+      padding-bottom: 5px;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
   }
 
-  li {
-    padding-bottom: 10px;
+  & > ul:first-child,
+  & > ol:first-child {
+    padding-inline-start: 18px;
 
-    &:last-of-type {
-      padding-bottom: 0;
+    ${media.down("sm")`
+      padding-inline-start: 18px;
+    `};
+
+    & > li {
+      padding-bottom: 15px;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
     }
   }
 
