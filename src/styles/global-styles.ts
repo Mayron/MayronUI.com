@@ -3,6 +3,7 @@ import colors from "./colors";
 import { css } from "@emotion/core";
 import media from "./media";
 import fonts from "./fonts";
+import buttons from "./css/buttons";
 
 const globalStyles = css`
   ${fonts};
@@ -18,6 +19,10 @@ const globalStyles = css`
     position: relative;
     max-width: 2560px;
     margin: 0 auto;
+  }
+
+  .text-link {
+    ${buttons["text"]};
   }
 
   body,

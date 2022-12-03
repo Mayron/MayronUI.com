@@ -79,6 +79,7 @@ const secondary = css`
 const text = css`
   color: ${colors.link.default};
   font-weight: ${vars.robotoFontWeightMedium};
+  text-decoration: none;
 
   &:hover {
     color: ${colors.link.hover};

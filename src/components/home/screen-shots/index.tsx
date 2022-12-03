@@ -14,23 +14,23 @@ type SlideNode = {
 const SlideData = new Map<string, SlideNode>();
 
 SlideData.set("1", {
-  title: "Ready for Burning Crusade Classic!",
+  title: "Ready for Dragonflight!",
   summary:
     /* eslint-disable quotes */
-    'Take MayronUI into Burning Crusader Classic, with many new improvements and features! Our <a target="_blank" href="https://mayronui.com/community">Discord community server</a> has never been so busy and ready to help, so make sure to join us and ask questions if you get stuck.',
+    'Take MayronUI into Dragonflight, with many new improvements and features! Our <a target="_blank" href="https://mayronui.com/community">Discord community server</a> has never been so busy and ready to help, so make sure to join us and ask questions if you get stuck.',
 });
 
 SlideData.set("2", {
-  title: "New Tool-Tips Module",
+  title: "Up to 3 Rows of 20 Action Buttons + 2 Side Columns",
   summary:
     /* eslint-disable quotes */
-    'Recently, a large update added several <a target="_blank" href="https://mayronui.com/blog/post/introducing-the-new-tool-tips-module-and-support-for-burning-crusade-classic">improvements and features</a>, including a new Tool-Tips module that tracks auras and shows additional unit info such as the unit\'s specialization, item level, and their current target.',
+    "Action bar rows can be toggled by pressing and holding the CTRL key. There are also 2 side action bar columns that can can be toggled by clicking on the arrow buttons.",
 });
 
 SlideData.set("3", {
   title: "Support for All WoW Clients",
   summary:
-    "MayronUI supports all 3 versions of WoW, including Retail (e.g., Shadowlands), Classic and Burning Crusade Classic, with new updates for each version released in-sync.",
+    "MayronUI supports all 3 versions of WoW, including Retail (e.g., Dragonflight), Classic Era and Wrath Classic, with new updates for each version released in-sync.",
 });
 
 SlideData.set("4", {
@@ -52,21 +52,15 @@ SlideData.set("6", {
 });
 
 SlideData.set("7", {
-  title: "Chat Frame and Action Bars",
+  title: "Modules, Profiles and Layouts",
   summary:
-    "Enable different chat frames for each corner of the screen and easily toggle a between one or two rows of action bars.",
+    "Customise your UI however you like and save those changes to different profiles to be used across all your characters. Use custom layouts to switch multiple profiles at once for each of your installed addons (not just MayronUI).",
 });
 
 SlideData.set("8", {
   title: "Minimalistic and Graphical Design",
   summary:
     "While going on solo adventures, your UI should not be a distraction; MayronUI has been designed with minimalism in mind to keep you focused on the world around you while still offering a graphically aesthetic look and feel.",
-});
-
-SlideData.set("9", {
-  title: "Modules, Profiles and Layouts",
-  summary:
-    "Customise your UI however you like and save those changes to different profiles to be used across all your characters. Use custom layouts to switch multiple profiles at once for each of your installed addons (not just MayronUI).",
 });
 
 export interface ICarouselImagesNode {

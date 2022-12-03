@@ -4,6 +4,11 @@ const { default: slugify } = require(`slugify`);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
+  // createRedirect({ fromPath: '/download', toPath: '/p/mayronui', isPermanent: true });
+  // createRedirect({ fromPath: '/install', toPath: '/p/mayronui', isPermanent: true });
+  // createRedirect({ fromPath: '/discord', toPath: '/community', isPermanent: true });
+
   const { data } = await graphql(`
     query {
       allContentfulBlogPost {

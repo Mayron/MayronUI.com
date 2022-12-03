@@ -6,6 +6,7 @@ import LazyImage from "../../common/lazy-image";
 import { Fade } from "react-awesome-reveal";
 import Section from "../../../styles/css/containers";
 import media from "../../../styles/media";
+import { Link } from "gatsby";
 
 const Introduction: React.FC = () => {
   return (
@@ -26,10 +27,11 @@ const Introduction: React.FC = () => {
             }
 
             p {
-              max-width: 700px;
+              max-width: 860px;
               margin: 0 auto;
               text-align: center;
               padding-bottom: 15px;
+              font-size: 1.125rem;
             }
 
             ${media.down("sm")`
@@ -42,24 +44,39 @@ const Introduction: React.FC = () => {
           `}
         >
           <h2>Designed with Passion for Exceptional Gameplay</h2>
+
           <p>
-            MayronUI has been in development for over 8 years. Both our dev-team and
-            active community are continuously growing at a rate we never thought possible.
+            MayronUI has been in development for over {new Date().getFullYear() - 2011}{" "}
+            years and has now surpassed 300k downloads!
           </p>
+
           <p>
-            The current release of MayronUI is the most customizable, high performance and
-            efficient UI suite we have ever assembled.
+            Our active community has been growing at a rate we never thought possible. The
+            official{" "}
+            <Link className="text-link" to="/community">
+              Discord
+            </Link>{" "}
+            server has been a fantastic resource of help and support to new arrivals, so
+            make sure to stop by and please don&apos;t hesitate to ask for help!
+          </p>
+
+          <p>
+            The development team consists of just myself (Mayron). However, in recent
+            years I&apos;ve been fortunate enough to see other experienced developers
+            volenteering to fix bugs or offer improvements. These contributions have
+            helped to ensure users get early and continuous updates, which is especially
+            critical during big updates to WoW.
           </p>
           <BulletPoints
             css={css`
-              width: 520px;
+              max-width: 550px;
               margin: 0 auto;
               padding-top: 20px;
+              font-size: 1rem;
 
               ${media.down("xs")`
                 width: 100%;
                 padding-inline-start: 30px;
-                font-size: 1rem;
 
                 li {
                   padding-bottom: 10px;
@@ -71,6 +88,7 @@ const Introduction: React.FC = () => {
             <li>Suitable for all classes, specs, roles and screen resolutions.</li>
             <li>Highly customizable to suit all needs.</li>
             <li>Modular design with support for additional plugins.</li>
+            <li>Supports Classic, Wrath, and Dragonflight (in 9 different languages).</li>
           </BulletPoints>
         </header>
       </Fade>
