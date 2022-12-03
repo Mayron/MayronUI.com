@@ -8,51 +8,8 @@ import Introduction from "../components/home/introduction";
 import ReadyToGetStarted from "../components/home/ready-to-get-started";
 import BottomLeftChatFrame from "../components/home/bottom-left-chat-frame";
 import TimerBars from "../components/home/timer-bars";
-import { graphql, useStaticQuery } from "gatsby";
 
 const IndexPage: React.FC<RouteComponentProps> = () => {
-  // const { file } = useStaticQuery(
-  //   graphql`
-  //     {
-  //       file(relativePath: { eq: "mui-bottomui.webm" }) {
-  //         childVideoFfmpeg {
-  //           webm: transcode(
-  //             outputOptions: ["-crf 20", "-b:v 0"]
-  //             maxWidth: 760
-  //             maxHeight: 260
-  //             fileExtension: "webm"
-  //             codec: "libvpx-vp9"
-  //           ) {
-  //             width
-  //             src
-  //             presentationMaxWidth
-  //             presentationMaxHeight
-  //             originalName
-  //             height
-  //             fileExtension
-  //             aspectRatio
-  //           }
-  //           mp4: transcode(
-  //             maxWidth: 760
-  //             maxHeight: 260
-  //             fileExtension: "mp4"
-  //             codec: "libx264"
-  //           ) {
-  //             width
-  //             src
-  //             presentationMaxWidth
-  //             presentationMaxHeight
-  //             originalName
-  //             height
-  //             fileExtension
-  //             aspectRatio
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `,
-  // );
-
   return (
     <Layout page="Home">
       <Banner />

@@ -7,18 +7,6 @@ var plugins = [
   `gatsby-plugin-emotion`,
   `gatsby-plugin-react-helmet`,
   {
-    resolve: `gatsby-plugin-eslint`,
-    options: {
-      test: /\.ts$|\.tsx$|\.js$|\.jsx$/,
-      exclude: /(node_modules|.cache|public)/,
-      stages: ["develop"],
-      options: {
-        emitWarning: true,
-        failOnError: false,
-      },
-    },
-  },
-  {
     resolve: "gatsby-plugin-asset-path",
     options: {
       fileTypes: ["js", "map", "css"],
@@ -26,7 +14,6 @@ var plugins = [
     },
   },
   `gatsby-plugin-remove-serviceworker`,
-  `gatsby-plugin-typescript`,
   `gatsby-plugin-sitemap`,
   {
     resolve: `gatsby-source-filesystem`,
